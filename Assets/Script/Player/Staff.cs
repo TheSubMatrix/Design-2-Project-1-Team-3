@@ -1,25 +1,21 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Staff : MonoBehaviour
 {
     [SerializeField] Transform m_projectileFirePoint;
-    [SerializeField] StaffAttack m_attack;
-    void Attack()
+    [SerializeField] List<StaffAttack> m_attacks;
+    public void Attack()
     {
-        m_attack.ExecuteAttack(m_projectileFirePoint.position, m_projectileFirePoint.rotation);
+        m_attacks[0]?.ExecuteAttack(m_projectileFirePoint.position, m_projectileFirePoint.rotation);
     }
 
     void Awake()
     {
-        m_attack.Initialize();
-    }
-
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+        foreach (StaffAttack attack in m_attacks)
         {
-            Attack();
+            attack.Initialize();
         }
     }
 }

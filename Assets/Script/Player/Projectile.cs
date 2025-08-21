@@ -8,6 +8,7 @@ using UnityEngine.Pool;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] protected uint Damage = 10;
     /// <summary>
     /// The <see cref="Rigidbody"/> attached to this <see cref="Projectile"/>
     /// </summary>
@@ -96,7 +97,7 @@ public class Projectile : MonoBehaviour
     {
         foreach (ContactPoint contact in collision.contacts)
         {
-
+            contact.otherCollider.gameObject.GetComponent<IDamageable>().Damage(Damage);
         }
         Pool?.Release(this);
     }

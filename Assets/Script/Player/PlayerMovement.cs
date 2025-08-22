@@ -47,12 +47,27 @@ public class PlayerMovement : MonoBehaviour
         transform.Rotate(Vector3.up * mouseX);
         if (Camera.main is not null) Camera.main.transform.localRotation *= Quaternion.Euler(-mouseY, 0, 0);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        m_groundCheck = true;
-    }
-    private void OnCollisionExit(Collision collision)
+    private void FixedUpdate()
     {
         m_groundCheck = false;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        //m_groundCheck = true;
+        EvaluateCollision(collision);
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        //m_groundCheck = true;
+        EvaluateCollision(collision);
+    }
+
+    void EvaluateCollision(Collision collision)
+    {
+        for (int i = 0; i < collision.contactCount; i++)
+        { 
+            Vector3 normal = collision.GetContact(i).normal;
+            m_groundCheck |= normal.y >= 0.9f;
+        }
     }
 }

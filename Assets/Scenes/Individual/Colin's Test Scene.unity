@@ -380,6 +380,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1537796798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537796801}
+  - component: {fileID: 1537796800}
+  - component: {fileID: 1537796799}
+  m_Layer: 0
+  m_Name: Vision Sensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1537796799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537796798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4619f8b229e8fc942b2b8c505ff185bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sightRadius: 5
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  m_showGizmos: 1
+--- !u!135 &1537796800
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537796798}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1537796801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537796798}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1740288470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1549857079
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +622,7 @@ GameObject:
   - component: {fileID: 1740288468}
   - component: {fileID: 1740288467}
   - component: {fileID: 1740288471}
+  - component: {fileID: 1740288472}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -646,7 +718,8 @@ Transform:
   m_LocalPosition: {x: 3, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1537796801}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1740288471
@@ -665,6 +738,7 @@ MonoBehaviour:
   m_BlackboardVariableOverridesList:
   - rid: 3789101202827903245
   - rid: 3789101202827903246
+  - rid: 3789101202827903281
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -688,6 +762,48 @@ MonoBehaviour:
         m_Value:
         - {fileID: 2096397948}
         - {fileID: 591875925}
+    - rid: 3789101202827903281
+      type: {class: 'BlackboardVariable`1[[VisionSensor, Enemies]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 17546762976613498194
+          m_Value1: 12664794036434532015
+        Name: Enemy Vision Sensor
+        m_Value: {fileID: 1537796799}
+--- !u!114 &1740288472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740288466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b34b9a5f6891b634bb4c8073da15c7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <CurrentHealth>k__BackingField: 0
+  <MaxHealth>k__BackingField: 100
+  OnDamagedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnReviveEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBecameInvulnerableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBecameVulnerableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_invulnerabilityAfterDamage: 0
+  m_invulnerabilityTime: 1
 --- !u!1 &2064635643
 GameObject:
   m_ObjectHideFlags: 0

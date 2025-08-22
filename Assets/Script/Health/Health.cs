@@ -1,6 +1,4 @@
-using System;
 using System.Threading;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,9 +10,10 @@ public class Health : MonoBehaviour, IDamageable
     public UnityEvent OnHealedEvent = new();
     public UnityEvent OnDeathEvent = new();
     public UnityEvent OnReviveEvent = new();
-    [SerializeField] bool m_invulnerabilityAfterDamage = false;
+    public UnityEvent OnBecameInvulnerableEvent = new();
+    public UnityEvent OnBecameVulnerableEvent = new();
+    [SerializeField] bool m_invulnerabilityAfterDamage;
     [SerializeField] float m_invulnerabilityTime = 1;
-    Task m_invulnerabilityTask;
     CancellationTokenSource m_cancellationTokenSource;
     public bool IsAlive => CurrentHealth > 0;
     public bool IsInvulnerable { get; private set; }
@@ -37,15 +36,8 @@ public class Health : MonoBehaviour, IDamageable
             return;
         }
         if(!m_invulnerabilityAfterDamage) return;
-        try
-        {
-            using CancellationTokenSource cts = CancellationTokenSource.CreateLinkedTokenSource(destroyCancellationToken, m_cancellationTokenSource.Token);
-            m_invulnerabilityTask = InvulnerableFor(m_invulnerabilityTime, cts.Token);
-        }
-        catch
-        {
-            // ignored
-        }
+        using CancellationTokenSource cts = CancellationTokenSource.CreateLinkedTokenSource(destroyCancellationToken, m_cancellationTokenSource.Token);
+        InvulnerableFor(m_invulnerabilityTime, cts.Token);
     }
     public void Heal(uint heal)
     {
@@ -60,17 +52,27 @@ public class Health : MonoBehaviour, IDamageable
     public void MakeInvulnerable()
     {
         IsInvulnerable = true;
+        if(!m_cancellationTokenSource.IsCancellationRequested) m_cancellationTokenSource.Cancel();
+        OnBecameInvulnerableEvent.Invoke();
     }
 
     public void MakeVulnerable()
     {
         IsInvulnerable = false;
+        if(!m_cancellationTokenSource.IsCancellationRequested) m_cancellationTokenSource.Cancel();
+        OnBecameVulnerableEvent.Invoke();
     }
-    async Task InvulnerableFor(float time, CancellationToken token)
+    async void InvulnerableFor(float time, CancellationToken token)
     {
-        IsInvulnerable = true;
-        await Awaitable.WaitForSecondsAsync(time, token);
-        IsInvulnerable = false;
+        try
+        {
+            IsInvulnerable = true;
+            await Awaitable.WaitForSecondsAsync(time, token);
+            IsInvulnerable = false;
+        }catch
+        {
+            // ignored
+        }
     }
     void OnDestroy()
     {

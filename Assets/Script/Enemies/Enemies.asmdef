@@ -1,9 +1,9 @@
 {
-    "name": "Player",
+    "name": "Enemies",
     "rootNamespace": "",
     "references": [
-        "GUID:ecd059b573046fe409f5d0e442af6dc3",
-        "GUID:ef27c8f01ce53bc44aa370538c71a07f"
+        "GUID:ef27c8f01ce53bc44aa370538c71a07f",
+        "GUID:ecd059b573046fe409f5d0e442af6dc3"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

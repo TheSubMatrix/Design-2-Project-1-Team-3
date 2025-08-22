@@ -49,6 +49,7 @@ public class Health : MonoBehaviour, IDamageable
             OnReviveEvent.Invoke();
         }
     }
+    
     public void MakeInvulnerable()
     {
         IsInvulnerable = true;

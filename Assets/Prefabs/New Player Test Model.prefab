@@ -429,7 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5007215445114011610}
-  - component: {fileID: 176606451018852651}
+  - component: {fileID: 739355673936487056}
   m_Layer: 0
   m_Name: PlayerCameraHolder
   m_TagString: Untagged
@@ -453,7 +453,7 @@ Transform:
   - {fileID: 1548908236138327136}
   m_Father: {fileID: 3072698354970845641}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &176606451018852651
+--- !u!114 &739355673936487056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,10 +462,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9088385123586814237}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2917491009144a4408736275927f3883, type: 3}
+  m_Script: {fileID: 11500000, guid: 53b14a7880f81364485ac38676a8f663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_xMouseSensitivity: 10
-  m_yMouseSensitivity: 10
-  m_cam: {fileID: 1548908236138327136}
-  m_orientation: {fileID: 7603956523092778386}
+  cameraPosition: {fileID: 4242356483076782635}

@@ -77,7 +77,7 @@ public class Health : MonoBehaviour, IDamageable
     }
     void OnDestroy()
     {
-        m_cancellationTokenSource.Cancel();
-        m_cancellationTokenSource.Dispose();
+        m_cancellationTokenSource?.Cancel();
+        m_cancellationTokenSource?.Dispose();
     }
 }

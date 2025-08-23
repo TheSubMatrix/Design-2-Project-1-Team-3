@@ -66,9 +66,10 @@ public class PlayerMovement : MonoBehaviour
         UpdateStates();
         MovePlayer();
         //if the player is grounded and wants to jump, then jump
-        if (m_wantsToJump && IsGrounded)
+        if (m_wantsToJump)
         {
-            Jump();
+            m_wantsToJump = false;
+            if (IsGrounded) Jump();
         }
         //if we want to crouch, and we aren't currently crouched, then crouch
         if(m_desiredCrouchState && !m_currentCrouchState)

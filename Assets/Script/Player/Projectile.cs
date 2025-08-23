@@ -97,7 +97,7 @@ public class Projectile : MonoBehaviour
     {
         foreach (ContactPoint contact in collision.contacts)
         {
-            contact.otherCollider.gameObject.GetComponent<IDamageable>().Damage(Damage);
+            contact.otherCollider.gameObject.GetComponent<IDamageable>()?.Damage(Damage);
         }
         Pool?.Release(this);
     }

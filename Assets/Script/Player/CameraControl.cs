@@ -12,7 +12,7 @@ public class CameraControl : MonoBehaviour
     [FormerlySerializedAs("orientation")] public Transform m_orientation;
 
     Vector2 m_mousePos;
-    Vector2 rotation;
+    Vector2 m_rotation;
 
 
     // Start is called before the first frame update
@@ -29,14 +29,14 @@ public class CameraControl : MonoBehaviour
         m_mousePos.x = Input.GetAxisRaw("Mouse X");
         m_mousePos.y = Input.GetAxisRaw("Mouse Y");
         //set the rotation values based on the sensitivity
-        rotation.y += m_mousePos.x * m_xMouseSensitivity;
-        rotation.x -= m_mousePos.y * m_yMouseSensitivity;
+        m_rotation.y += m_mousePos.x * m_xMouseSensitivity;
+        m_rotation.x -= m_mousePos.y * m_yMouseSensitivity;
         //clamp the x rotation so that the camera can't rotate past a certain point on that axis
-        rotation.x = Mathf.Clamp(rotation.x, -90f, 90f);
+        m_rotation.x = Mathf.Clamp(m_rotation.x, -90f, 90f);
         //transform the camera's rotation based on the values
-        m_cam.transform.localRotation = Quaternion.Euler(rotation.x, rotation.y, 0);
+        m_cam.transform.localRotation = Quaternion.Euler(m_rotation.x, m_rotation.y, 0);
         //transform the orientation value so it can be used as the forward in the player movement script
-        m_orientation.transform.localRotation = Quaternion.Euler(0, rotation.y, 0);
+        m_orientation.transform.localRotation = Quaternion.Euler(0, m_rotation.y, 0);
 
     }
 }

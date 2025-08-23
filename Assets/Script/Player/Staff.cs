@@ -9,7 +9,7 @@ public class Staff : MonoBehaviour
     int m_attackIndex;
     public void Attack()
     {
-        m_attacks[m_attackIndex % m_attacks.Count]?.ExecuteAttack(m_projectileFirePoint.position, m_projectileFirePoint.rotation);
+        m_attacks[m_attackIndex % m_attacks.Count]?.ExecuteAttack(m_projectileFirePoint.position, transform.forward, m_projectileFirePoint.rotation);
     }
 
     void Awake()
@@ -22,7 +22,7 @@ public class Staff : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Fire1"))
         {
             Attack();
         }

@@ -23,11 +23,11 @@ public class BasicProjectileAttack : StaffAttack
         );
         
     }
-    public override void ExecuteAttack(Vector3 position, Quaternion rotation)
+    public override void ExecuteAttack(Vector3 position,Vector3 direction, Quaternion rotation)
     {
         Projectile projectileFromPool = m_projectilePool.Get();
         projectileFromPool.OnInitialize(position,rotation);
-        projectileFromPool.OnFire(position + rotation * Vector3.forward * 10);
+        projectileFromPool.OnFire(direction * 10);
     }
 
 }

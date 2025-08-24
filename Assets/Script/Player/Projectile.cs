@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Pool;
 /// <summary>
-/// The base class for any object fired from a <see cref="Weapon"/>. This class is designed to use an <see cref="ObjectPool{T}"/> no minimize the creation and destruction of <see cref="GameObject"/> runtime
+/// The base class for any projectile fired from the staff. This class is designed to use an <see cref="ObjectPool{T}"/> no minimize the creation and destruction of <see cref="GameObject"/> runtime
 /// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
@@ -97,7 +97,7 @@ public class Projectile : MonoBehaviour
     {
         foreach (ContactPoint contact in collision.contacts)
         {
-            contact.otherCollider.gameObject.GetComponent<IDamageable>().Damage(Damage);
+            contact.otherCollider.gameObject.GetComponent<IDamageable>()?.Damage(Damage);
         }
         Pool?.Release(this);
     }

@@ -4,6 +4,6 @@ using UnityEngine;
 public abstract class StaffAttack : ScriptableObject
 {
     public abstract void Initialize();
-    public abstract void ExecuteAttack(Vector3 position, Quaternion rotation);
+    public abstract void ExecuteAttack(Vector3 position, Vector3 direction, Quaternion rotation);
     
 }

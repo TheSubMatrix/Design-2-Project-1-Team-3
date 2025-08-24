@@ -28,6 +28,7 @@ public class VisionSensor : MonoBehaviour
         m_sightSphere.radius = m_sightRadius;
         m_sightSphere.isTrigger = true;
         m_sightSphere.includeLayers = m_layerMask;
+        m_sightSphere.excludeLayers = ~m_layerMask;
     }
 
     void OnDrawGizmos()
@@ -44,6 +45,7 @@ public class VisionSensor : MonoBehaviour
         m_sightSphere.radius = m_sightRadius;
         m_sightSphere.isTrigger = true;
         m_sightSphere.includeLayers = m_layerMask;
+        m_sightSphere.excludeLayers = ~m_layerMask;
     }
     void OnTriggerEnter(Collider other)
     {

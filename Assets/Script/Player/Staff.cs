@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ public class Staff : MonoBehaviour
     int m_attackIndex;
     public void Attack()
     {
-        m_attacks[m_attackIndex % m_attacks.Count]?.ExecuteAttack(m_projectileFirePoint.position, m_projectileFirePoint.rotation);
+        m_attacks[m_attackIndex]?.ExecuteAttack(m_projectileFirePoint.position, transform.forward, m_projectileFirePoint.rotation);
     }
 
     void Awake()
@@ -26,10 +25,10 @@ public class Staff : MonoBehaviour
         {
             Attack();
         }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (m_attacks.Count > 0 && Input.GetAxis("Mouse ScrollWheel") != 0f)
         {
-            m_attackIndex++;
+            m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + m_attacks.Count) % m_attacks.Count;
         }
+
     }
 }

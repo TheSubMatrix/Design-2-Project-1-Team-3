@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 670ea5e058266e64cb4bb178c059fb2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 20
   <Lifetime>k__BackingField: 2
   <OnPullEvent>k__BackingField:
     m_PersistentCalls:
@@ -163,4 +163,4 @@ MonoBehaviour:
   <OnReleaseEvent>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  m_duration: 10
+  m_duration: 2

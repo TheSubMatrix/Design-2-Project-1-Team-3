@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4619f8b229e8fc942b2b8c505ff185bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_sightRadius: 5
+  m_sightRadius: 10
   m_layerMask:
     serializedVersion: 2
     m_Bits: 8
@@ -440,7 +440,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 5
+  m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1537796801
 Transform:
@@ -491,6 +491,8 @@ MonoBehaviour:
   m_projectileFirePoint: {fileID: 1568895642}
   m_attacks:
   - {fileID: 11400000, guid: 3beb904bd0f0cd3419bc8284f8147977, type: 2}
+  - {fileID: 11400000, guid: 11addf7dfdfc07b419ac852a2248d86f, type: 2}
+  - {fileID: 11400000, guid: 0c244718d77f7244b865189ffc20fb62, type: 2}
 --- !u!23 &1549857082
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -605,6 +607,7 @@ GameObject:
   - component: {fileID: 1740288467}
   - component: {fileID: 1740288471}
   - component: {fileID: 1740288472}
+  - component: {fileID: 1740288473}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -658,7 +661,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4190f0eef0782d46950b8e390ceb441, type: 2}
+  - {fileID: 2100000, guid: 5b9f8b0caf8be6e4c96e40740c68de7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -721,6 +724,7 @@ MonoBehaviour:
   - rid: 3789101202827903245
   - rid: 3789101202827903246
   - rid: 3789101202827903281
+  - rid: 3789101248851476634
   m_IsInitialised: 0
   m_IsStarted: 0
   references:
@@ -752,6 +756,14 @@ MonoBehaviour:
           m_Value1: 12664794036434532015
         Name: Enemy Vision Sensor
         m_Value: {fileID: 1537796799}
+    - rid: 3789101248851476634
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1166030471835946324
+          m_Value1: 15251171708831702885
+        Name: Speed
+        m_Value: 3
 --- !u!114 &1740288472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,7 +786,19 @@ MonoBehaviour:
       m_Calls: []
   OnDeathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1740288466}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnReviveEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -786,6 +810,20 @@ MonoBehaviour:
       m_Calls: []
   m_invulnerabilityAfterDamage: 0
   m_invulnerabilityTime: 1
+--- !u!114 &1740288473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740288466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aee20e5a3b5a164ca5274a99d6cf6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_agent: {fileID: 1740288471}
+  m_speedVariableName: Speed
 --- !u!1001 &2041686411
 PrefabInstance:
   m_ObjectHideFlags: 0

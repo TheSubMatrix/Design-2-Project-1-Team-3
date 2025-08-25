@@ -19,6 +19,11 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
         StartCoroutine(OnSceneTransition(sceneName, transitionTime));
     }
     
+    public void ReloadScene(float transitionTime)
+    {
+        StartCoroutine(OnSceneTransition(SceneManager.GetActiveScene().name, transitionTime));
+    }
+    
     IEnumerator OnSceneTransition(string sceneName, float transitionTime)
     {
         if (IsTransitioning) yield break;

@@ -28,7 +28,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
     {
         if (IsTransitioning) yield break;
         yield return FadeCanvasGroup(m_transitionCanvasGroup, 1, transitionTime);
-        SceneManager.LoadScene(sceneName);
+        yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         yield return FadeCanvasGroup(m_transitionCanvasGroup, 0, transitionTime);
     }
 

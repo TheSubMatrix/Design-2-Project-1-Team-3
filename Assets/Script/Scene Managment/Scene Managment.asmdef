@@ -1,11 +1,8 @@
 {
-    "name": "Enemies",
+    "name": "SceneManagment",
     "rootNamespace": "",
     "references": [
-        "GUID:ef27c8f01ce53bc44aa370538c71a07f",
-        "GUID:ecd059b573046fe409f5d0e442af6dc3",
-        "GUID:73907d139b13f8a43b7e3e95c329d30a",
-        "GUID:20ee76f6d94ae4b0595f3ceb1c5359a7"
+        "GUID:a3aab014a8e3ef4438300f4c5a6e46fd"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

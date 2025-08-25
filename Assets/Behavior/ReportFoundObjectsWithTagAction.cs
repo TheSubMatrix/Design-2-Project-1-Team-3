@@ -21,7 +21,7 @@ public partial class ReportFoundObjectsWithTagAction : Action
     protected override Status OnUpdate()
     {
         Target.Value = Vision.Value.m_selectedTarget;
-        return Status.Running;
+        return Status.Success;
     }
 
     protected override void OnEnd()

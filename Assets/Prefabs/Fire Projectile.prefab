@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3489131832050992543}
   - component: {fileID: 4618385549272618110}
   - component: {fileID: 8908921196848594678}
-  - component: {fileID: 8654684043164906705}
+  - component: {fileID: -6095944583642922091}
   m_Layer: 0
-  m_Name: Projectile Red
+  m_Name: Fire Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +137,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8654684043164906705
+--- !u!114 &-6095944583642922091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,10 +146,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7629056565955650697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88faa1577cac8674b8a2f4e5f223ec3e, type: 3}
+  m_Script: {fileID: 11500000, guid: 670ea5e058266e64cb4bb178c059fb2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 20
   <Lifetime>k__BackingField: 2
   <OnPullEvent>k__BackingField:
     m_PersistentCalls:
@@ -163,3 +163,4 @@ MonoBehaviour:
   <OnReleaseEvent>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  m_duration: 2

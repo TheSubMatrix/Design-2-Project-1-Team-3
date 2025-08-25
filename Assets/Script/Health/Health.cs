@@ -39,6 +39,9 @@ public class Health : MonoBehaviour, IDamageable
         using CancellationTokenSource cts = CancellationTokenSource.CreateLinkedTokenSource(destroyCancellationToken, m_cancellationTokenSource.Token);
         InvulnerableFor(m_invulnerabilityTime, cts.Token);
     }
+
+    MonoBehaviour IDamageable.CurrentMonoBehaviour => this;
+
     public void Heal(uint heal)
     {
         bool currentAliveState = IsAlive;

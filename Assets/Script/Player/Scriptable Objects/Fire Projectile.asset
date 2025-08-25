@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc91c22d7f45514a84b7548d624bc04, type: 3}
   m_Name: Fire Projectile
   m_EditorClassIdentifier: 
+  <AttackName>k__BackingField: Fire
   m_projectilePrefab: {fileID: 7629056565955650697, guid: 7a1fdd680f9409a4dbd5315a1e35e199, type: 3}

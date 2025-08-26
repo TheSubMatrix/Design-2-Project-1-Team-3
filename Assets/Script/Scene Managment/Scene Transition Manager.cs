@@ -14,7 +14,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
         m_transitionCanvasGroup = GetComponent<CanvasGroup>();
     }
 
-    public void TransitionToScene(string sceneName, float transitionTime)
+    public void TransitionToScene(string sceneName, float transitionTime = 0.25f)
     {
         StartCoroutine(OnSceneTransition(sceneName, transitionTime));
     }

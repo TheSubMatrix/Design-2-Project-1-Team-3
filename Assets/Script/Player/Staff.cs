@@ -1,20 +1,20 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Staff : MonoBehaviour
 {
     [SerializeField] Transform m_projectileFirePoint;
-    [SerializeField] List<StaffAttack> m_attacks;
+    [field:SerializeField] public List<StaffAttackSO> Attacks{ get; set;}
     int m_attackIndex;
     public void Attack()
     {
-        m_attacks[m_attackIndex % m_attacks.Count]?.ExecuteAttack(m_projectileFirePoint.position, m_projectileFirePoint.rotation);
+        Attacks[m_attackIndex]?.ExecuteAttack(m_projectileFirePoint.position, transform.forward, m_projectileFirePoint.rotation);
     }
 
     void Awake()
     {
-        foreach (StaffAttack attack in m_attacks)
+        foreach (StaffAttackSO attack in Attacks)
         {
             attack.Initialize();
         }
@@ -22,14 +22,14 @@ public class Staff : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Fire1"))
         {
             Attack();
         }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Attacks.Count > 0 && Input.GetAxis("Mouse ScrollWheel") != 0f)
         {
-            m_attackIndex++;
+            m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + Attacks.Count) % Attacks.Count;
         }
+
     }
 }

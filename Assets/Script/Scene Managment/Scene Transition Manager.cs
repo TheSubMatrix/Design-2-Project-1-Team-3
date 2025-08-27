@@ -14,7 +14,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
         m_transitionCanvasGroup = GetComponent<CanvasGroup>();
     }
 
-    public void TransitionToScene(string sceneName, float transitionTime = 0.25f)
+    public void TransitionToScene(string sceneName, float transitionTime = 0.5f)
     {
         StartCoroutine(OnSceneTransition(sceneName, transitionTime));
     }
@@ -23,16 +23,24 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
     {
         StartCoroutine(OnSceneTransition(SceneManager.GetActiveScene().name, transitionTime));
     }
-    
+    public void QuitApplication(float transitionTime)
+    {
+        StartCoroutine(QuitApplicationAsync(transitionTime));
+    }
     IEnumerator OnSceneTransition(string sceneName, float transitionTime)
     {
         if (IsTransitioning) yield break;
-        yield return FadeCanvasGroup(m_transitionCanvasGroup, 1, transitionTime);
+        yield return FadeCanvasGroupAsync(m_transitionCanvasGroup, 1, transitionTime);
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
-        yield return FadeCanvasGroup(m_transitionCanvasGroup, 0, transitionTime);
+        yield return FadeCanvasGroupAsync(m_transitionCanvasGroup, 0, transitionTime);
     }
 
-    static IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float targetAlpha, float transitionTime)
+    IEnumerator QuitApplicationAsync(float transitionTime)
+    {
+        yield return FadeCanvasGroupAsync(m_transitionCanvasGroup, 1, transitionTime);
+        Application.Quit();
+    }
+    static IEnumerator FadeCanvasGroupAsync(CanvasGroup canvasGroup, float targetAlpha, float transitionTime)
     {
         float elapsedTime = 0;
         while (elapsedTime < transitionTime)

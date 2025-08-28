@@ -1,0 +1,58 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class UIpauseMenu : MonoBehaviour
+{
+    [SerializeField]
+    GameObject pausedMenu;
+    public static bool isPaused;
+    public void TransitionToScene(string sceneName, float transitionTime = 0.5f)
+    {
+        SceneTransitionManager.Instance.TransitionToScene("Isaiah's Test Scene", 0.5f);
+    }
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        pausedMenu.SetActive(false);
+        isPaused = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused) 
+            {
+                Paused();
+            }
+            else
+            {
+                Resume();
+            }
+        }
+    }
+    private void Paused()
+    {
+        //SceneTransitionManager.Instance.TransitionToScene("Isaiah's Test Scene", 0.5f);
+        pausedMenu.SetActive(true);
+        isPaused = true;
+        Time.timeScale = 0f;
+    }
+    public void Resume()
+    {
+        pausedMenu.SetActive(false);
+        isPaused = false;
+        Time.timeScale = 1.0f;
+    }
+    public void Title()
+    {
+        Time.timeScale = 1.0f;
+        SceneManager.LoadScene("Title");
+    }
+    public void Quit()
+    {
+        Debug.Log("you have quit the game");
+        Application.Quit();
+    }
+}

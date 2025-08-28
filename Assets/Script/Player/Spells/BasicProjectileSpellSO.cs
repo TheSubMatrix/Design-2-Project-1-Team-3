@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Pool;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Attacks/Basic Projectile Attack", fileName = "New Basic Projectile Attack"), Serializable]
-public class BasicProjectileAttackSO : StaffAttackSO
+public class BasicProjectileSpellSO : StaffSpellSO
 {
     [SerializeField] GameObject m_projectilePrefab;
     ObjectPool<Projectile> m_projectilePool;

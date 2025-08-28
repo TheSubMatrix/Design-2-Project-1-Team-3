@@ -5,7 +5,8 @@ using UnityEngine.Serialization;
 public class Staff : MonoBehaviour
 {
     [SerializeField] Transform m_projectileFirePoint;
-    [field:SerializeField] public List<StaffAttackSO> Attacks{ get; set;}
+    [SerializeField] Material m_staffBallMaterial;
+    [field:SerializeField] public List<StaffSpellSO> Attacks{ get; set;}
     int m_attackIndex;
     public void Attack()
     {
@@ -14,7 +15,7 @@ public class Staff : MonoBehaviour
 
     void Awake()
     {
-        foreach (StaffAttackSO attack in Attacks)
+        foreach (StaffSpellSO attack in Attacks)
         {
             attack.Initialize();
         }
@@ -26,10 +27,10 @@ public class Staff : MonoBehaviour
         {
             Attack();
         }
-        if (Attacks.Count > 0 && Input.GetAxis("Mouse ScrollWheel") != 0f)
-        {
-            m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + Attacks.Count) % Attacks.Count;
-        }
+
+        if (Attacks.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;
+        m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + Attacks.Count) % Attacks.Count;
+        m_staffBallMaterial.color = Attacks[m_attackIndex].SpellBallColor;
 
     }
 }

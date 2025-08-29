@@ -12,5 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc91c22d7f45514a84b7548d624bc04, type: 3}
   m_Name: Normal Projectile
   m_EditorClassIdentifier: 
-  <AttackName>k__BackingField: Normal
+  <SpellName>k__BackingField: Normal
+  <CastSound>k__BackingField:
+    Clip: {fileID: 0}
+    MixerGroup: {fileID: 0}
+    Loop: 0
+    PlayOnAwake: 0
+    PlayedFrequently: 0
+    Volume: 1
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    RolloffMode: 0
+  m_spellBallColor: {r: 0.4792453, g: 0.4792453, b: 0.4792453, a: 0}
   m_projectilePrefab: {fileID: 7629056565955650697, guid: a3f3de76f0d8b794eb2e993ca3143dbd, type: 3}

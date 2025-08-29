@@ -32,7 +32,7 @@ public class Staff : MonoBehaviour
 
         if (Attacks.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;
         m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + Attacks.Count) % Attacks.Count;
-        m_staffBallRenderer.sharedMaterial.color = Attacks[m_attackIndex].SpellBallColor;
+        m_staffBallRenderer.material.color = Attacks[m_attackIndex].SpellBallColor;
 
     }
 }

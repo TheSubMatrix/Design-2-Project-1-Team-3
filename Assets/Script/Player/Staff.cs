@@ -17,6 +17,7 @@ public class Staff : MonoBehaviour
 
     void Awake()
     {
+        m_staffBallRenderer.material.color = Attacks[m_attackIndex].SpellBallColor;
         foreach (StaffSpellSO attack in Attacks)
         {
             attack.Initialize();

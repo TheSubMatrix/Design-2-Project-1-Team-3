@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class UIpauseMenu : MonoBehaviour
 {
@@ -24,10 +25,14 @@ public class UIpauseMenu : MonoBehaviour
         {
             if (!isPaused) 
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 Paused();
             }
             else
             {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 Resume();
             }
         }

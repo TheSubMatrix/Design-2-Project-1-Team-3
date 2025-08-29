@@ -5,6 +5,8 @@ using UnityEngine.Pool;
 [CreateAssetMenu(menuName = "Scriptable Objects/Attacks/Basic Projectile Attack", fileName = "New Basic Projectile Attack"), Serializable]
 public class BasicProjectileSpellSO : StaffSpellSO
 {
+    public override Color SpellBallColor => m_spellBallColor;
+    [SerializeField][ColorUsage(false, true)] Color m_spellBallColor;
     [SerializeField] GameObject m_projectilePrefab;
     ObjectPool<Projectile> m_projectilePool;
     public override void Initialize()

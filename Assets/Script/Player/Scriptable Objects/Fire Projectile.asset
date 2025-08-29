@@ -13,5 +13,23 @@ MonoBehaviour:
   m_Name: Fire Projectile
   m_EditorClassIdentifier: 
   <SpellName>k__BackingField: Fire
-  <SpellBallColor>k__BackingField: {r: 1, g: 0.19999471, b: 0, a: 1}
+  <CastSound>k__BackingField:
+    Clip: {fileID: 8300000, guid: eb992ed93e5c37e468e73f727b53d884, type: 3}
+    MixerGroup: {fileID: -8113704343797999582, guid: fc4fa691de3ec5542b809c3c7d5651aa, type: 2}
+    Loop: 0
+    PlayOnAwake: 0
+    PlayedFrequently: 0
+    Volume: 1
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    RolloffMode: 0
+  m_spellBallColor: {r: 1, g: 0.20362361, b: 0.066037595, a: 0}
   m_projectilePrefab: {fileID: 7629056565955650697, guid: 7a1fdd680f9409a4dbd5315a1e35e199, type: 3}

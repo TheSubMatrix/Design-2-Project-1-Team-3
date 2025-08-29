@@ -300,6 +300,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.010000001, y: 0.009999999, z: 0.010000001}
   m_Center: {x: 0, y: -4.656613e-10, z: -0.00000011920929}
+--- !u!1001 &50837885
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7773743598224583022, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_Name
+      value: Sound Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033125163847880305, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033125163847880305, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033125163847880305, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033125163847880305, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033125163847880305, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033125163847880305, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033125163847880305, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033125163847880305, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033125163847880305, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033125163847880305, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d904785c2a058a4d92c361845b07cf1, type: 3}
 --- !u!1 &112202684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,9 +2601,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 398080b1a434b6a4a893c105247526f5, type: 2}
     - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: m_fireSound.Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: eb992ed93e5c37e468e73f727b53d884, type: 3}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: m_staffBallMaterial
       value: 
       objectReference: {fileID: 2100000, guid: 398080b1a434b6a4a893c105247526f5, type: 2}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: m_staffBallRenderer
+      value: 
+      objectReference: {fileID: 1950480651}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: m_fireSound.MixerGroup
+      value: 
+      objectReference: {fileID: -8113704343797999582, guid: fc4fa691de3ec5542b809c3c7d5651aa, type: 2}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: m_fireSound.PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3348382607844530287, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -4629,6 +4702,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.009999999, y: 0.009999999, z: 0.01}
   m_Center: {x: 0, y: -2.3283064e-10, z: 0.00000047683716}
+--- !u!23 &1950480651 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3183574313175511089, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+  m_PrefabInstance: {fileID: 893179643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1992243642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5875,3 +5953,4 @@ SceneRoots:
   - {fileID: 16721475}
   - {fileID: 2031177503}
   - {fileID: 2117748449}
+  - {fileID: 50837885}

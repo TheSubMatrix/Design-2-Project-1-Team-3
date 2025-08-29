@@ -46,7 +46,7 @@ namespace AudioSystem
             SoundEmitter emitter = m_soundManager.Get();
             emitter.Initialize(m_soundData);
             emitter.transform.position = m_position;
-            emitter.transform.parent = m_parent == null ? m_soundManager.transform : m_parent;
+            emitter.transform.parent = m_parent ?? m_soundManager.transform;
             if (m_randomPitch)
             {
                 emitter.WithRandomPitch();

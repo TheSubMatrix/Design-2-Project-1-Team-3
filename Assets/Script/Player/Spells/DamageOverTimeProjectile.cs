@@ -16,7 +16,11 @@ public class DamageOverTimeProjectile : Projectile
             IDamageable damageable = contact.otherCollider.gameObject.GetComponent<IDamageable>();
             damageable?.CurrentMonoBehaviour.StartCoroutine(DamageOverTimeAsync(m_duration, Damage,contact.otherCollider.gameObject.GetComponent<IDamageable>().Damage));
         }
-        Pool?.Release(this);
+
+        if (gameObject.activeSelf)
+        {
+            Pool?.Release(this);
+        }
     }
 
     IEnumerator DamageOverTimeAsync(float totalDuration, uint totalDamage, DamageDelegate onDamage)

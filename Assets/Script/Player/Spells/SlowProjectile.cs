@@ -18,7 +18,7 @@ public class SlowProjectile : Projectile
             slowable?.Slow(m_slowAmount, m_duration);
             damageable?.Damage(Damage);
         }
-        Pool?.Release(this);
+        if(gameObject.activeSelf) Pool?.Release(this);
     }
     
 }

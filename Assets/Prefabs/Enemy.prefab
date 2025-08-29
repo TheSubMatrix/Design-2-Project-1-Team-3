@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_agent: {fileID: 2682658761822813155}
+  m_navMeshAgent: {fileID: 6313435518859022487}
   m_speedVariableName: Speed
 --- !u!195 &6313435518859022487
 NavMeshAgent:

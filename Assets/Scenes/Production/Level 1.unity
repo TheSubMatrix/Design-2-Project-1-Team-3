@@ -2542,7 +2542,11 @@ PrefabInstance:
     - target: {fileID: 3183574313175511089, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: f183883b4c121e8438c32b4cdefe60de, type: 2}
+      objectReference: {fileID: 2100000, guid: 398080b1a434b6a4a893c105247526f5, type: 2}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: m_staffBallMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 398080b1a434b6a4a893c105247526f5, type: 2}
     - target: {fileID: 3348382607844530287, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: m_Layer
       value: 6

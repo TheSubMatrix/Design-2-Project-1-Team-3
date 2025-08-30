@@ -6,6 +6,7 @@ using UnityEngine.Pool;
 [RequireComponent(typeof(Rigidbody))]
 public class DamageOverTimeProjectile : Projectile
 {
+    //i change fire ball mass to .75
     [SerializeField] protected float m_duration = 10;
     delegate void DamageDelegate(uint damage);
     protected override void OnCollisionEnter(Collision collision)

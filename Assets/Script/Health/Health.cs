@@ -15,10 +15,17 @@ public class Health : MonoBehaviour, IDamageable
     [SerializeField] bool m_invulnerabilityAfterDamage;
     [SerializeField] float m_invulnerabilityTime = 1;
     CancellationTokenSource m_cancellationTokenSource;
+
+    //for health bar
+    [SerializeField] private HealthBar _healthBar;
+    //for health bar
     public bool IsAlive => CurrentHealth > 0;
     public bool IsInvulnerable { get; private set; }
     public void Awake()
     {
+        //for health bar
+        //_healthBar.UpdateHealthBar(_maxhealthBar, _currentHealthBar);
+        //for health bar
         CurrentHealth = MaxHealth;
         m_cancellationTokenSource = new CancellationTokenSource();
     }
@@ -30,6 +37,9 @@ public class Health : MonoBehaviour, IDamageable
         bool currentAliveState = IsAlive;
         CurrentHealth -= CurrentHealth > damage ? damage : CurrentHealth;
         OnDamagedEvent.Invoke();
+        //for health bar
+        //_healthBar.UpdateHealthBar(_maxhealthBar, _currentHealthBar);
+        //for health bar
         if (currentAliveState != IsAlive)
         {
             OnDeathEvent.Invoke();
@@ -47,6 +57,9 @@ public class Health : MonoBehaviour, IDamageable
         bool currentAliveState = IsAlive;
         CurrentHealth += CurrentHealth < MaxHealth ? heal : MaxHealth;
         OnHealedEvent.Invoke();
+        //for health bar
+        //_healthBar.UpdateHealthBar(_maxhealthBar, _currentHealthBar);
+        //for health bar
         if (currentAliveState != IsAlive)
         {
             OnReviveEvent.Invoke();

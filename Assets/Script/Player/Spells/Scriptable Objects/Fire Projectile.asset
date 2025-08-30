@@ -31,5 +31,6 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     RolloffMode: 0
+  <SpellSprite>k__BackingField: {fileID: 21300000, guid: 93f6250b2939a2e4796d3c8e414540a8, type: 3}
   m_spellBallColor: {r: 1, g: 0.20362361, b: 0.066037595, a: 0}
   m_projectilePrefab: {fileID: 7629056565955650697, guid: 7a1fdd680f9409a4dbd5315a1e35e199, type: 3}

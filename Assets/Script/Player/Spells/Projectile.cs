@@ -8,8 +8,6 @@ using UnityEngine.Pool;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
-
-    //i changed rocks mass to 1.5
     [SerializeField] protected uint Damage = 10;
     /// <summary>
     /// The <see cref="Rigidbody"/> attached to this <see cref="Projectile"/>
@@ -101,7 +99,8 @@ public class Projectile : MonoBehaviour
         {
             contact.otherCollider.gameObject.GetComponent<IDamageable>()?.Damage(Damage);
         }
-        Pool?.Release(this);
+        if (gameObject.activeSelf)
+            Pool?.Release(this);
     }
 
     /// <summary>

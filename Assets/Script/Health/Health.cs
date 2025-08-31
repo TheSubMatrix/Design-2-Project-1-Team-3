@@ -3,7 +3,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour, IDamageable
+public class Health : MonoBehaviour, IDamageable, IHealable
 {
     [field:SerializeField] public uint CurrentHealth { get; private set; }
     [field:SerializeField] public uint MaxHealth { get; private set; }
@@ -60,7 +60,9 @@ public class Health : MonoBehaviour, IDamageable
             OnReviveEvent.Invoke();
         }
     }
-    
+
+    public MonoBehaviour CurrentMonoBehaviour => this;
+
     public void MakeInvulnerable()
     {
         IsInvulnerable = true;

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Pool;
 
-[CreateAssetMenu(menuName = "Scriptable Objects/Attacks/Basic Projectile Attack", fileName = "New Basic Projectile Attack"), Serializable]
+[CreateAssetMenu(menuName = "Scriptable Objects/Spells/Basic Projectile Spell", fileName = "New Basic Projectile Spell"), Serializable]
 public class BasicProjectileSpellSO : StaffSpellSO
 {
     public override Color SpellBallColor => m_spellBallColor;

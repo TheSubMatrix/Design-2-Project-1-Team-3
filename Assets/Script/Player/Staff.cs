@@ -8,47 +8,47 @@ public class Staff : MonoBehaviour
 {
     [SerializeField] Transform m_projectileFirePoint;
     [SerializeField] Renderer m_staffBallRenderer;
-    [field:SerializeField] public List<SpellAndAttacksRemaining> Attacks{ get; set;}
+    [field: FormerlySerializedAs("<Attacks>k__BackingField")] [field:SerializeField] public List<SpellSlot> SpellSlots{ get; set;}
 
     [Serializable]
-    public class SpellAndAttacksRemaining
+    public class SpellSlot
     {
-        public SpellAndAttacksRemaining(StaffSpellSO spell)
+        public SpellSlot(StaffSpellSO spell)
         {
             Spell = spell;
-            UseCount = spell.UseCount;
+            RemainingUseCount = spell.UseCount;
         }
         public StaffSpellSO Spell;
-        [ReadOnly]public uint? UseCount;
+        public uint? RemainingUseCount;
     }
     int m_attackIndex;
     public void Attack()
     {
-        Attacks[m_attackIndex].Spell?.ExecuteAttack(m_projectileFirePoint.position, transform.forward, m_projectileFirePoint.rotation);
-        SoundManager.Instance.CreateSound().WithSoundData(Attacks[m_attackIndex].Spell?.CastSound).WithPosition(transform.position).WithRandomPitch().Play();
-        if (Attacks[m_attackIndex].UseCount is not > 0) return;
-        Attacks[m_attackIndex].UseCount--;
-        if (Attacks[m_attackIndex].UseCount is not <= 0) return;
-        Attacks.RemoveAt(m_attackIndex);
-        if (m_attackIndex > Attacks.Count - 1)
+        SpellSlots[m_attackIndex].Spell?.ExecuteAttack(m_projectileFirePoint.position, transform.forward, m_projectileFirePoint.rotation);
+        SoundManager.Instance.CreateSound().WithSoundData(SpellSlots[m_attackIndex].Spell?.CastSound).WithPosition(transform.position).WithRandomPitch().Play();
+        if (SpellSlots[m_attackIndex].RemainingUseCount is not > 0) return;
+        SpellSlots[m_attackIndex].RemainingUseCount--;
+        if (SpellSlots[m_attackIndex].RemainingUseCount is not <= 0) return;
+        SpellSlots.RemoveAt(m_attackIndex);
+        if (m_attackIndex > SpellSlots.Count - 1)
         {
-            m_attackIndex = Attacks.Count - 1;
+            m_attackIndex = SpellSlots.Count - 1;
         }
-        if(Attacks[m_attackIndex].Spell)
-            m_staffBallRenderer.material.color = Attacks[m_attackIndex].Spell.SpellBallColor;
+        if(SpellSlots[m_attackIndex].Spell)
+            m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
     }
 
     void Awake()
     {
-        if(Attacks[m_attackIndex].Spell)
-            m_staffBallRenderer.material.color = Attacks[m_attackIndex].Spell.SpellBallColor;
-        foreach (SpellAndAttacksRemaining attack in Attacks)
+        if(SpellSlots[m_attackIndex].Spell)
+            m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
+        foreach (SpellSlot attack in SpellSlots)
         {
             attack.Spell?.Initialize();
             // Ensure per-staff remaining uses are initialized because Unity doesn't run the ctor
-            if (attack.UseCount is null && attack.Spell != null)
+            if (attack.RemainingUseCount is null && attack.Spell != null)
             {
-                attack.UseCount = attack.Spell.UseCount;
+                attack.RemainingUseCount = attack.Spell.UseCount;
             }
         }
     }
@@ -60,10 +60,10 @@ public class Staff : MonoBehaviour
             Attack();
         }
 
-        if (Attacks.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;
-        m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + Attacks.Count) % Attacks.Count;
-        if(Attacks[m_attackIndex].Spell)
-            m_staffBallRenderer.material.color = Attacks[m_attackIndex].Spell.SpellBallColor;
+        if (SpellSlots.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;
+        m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + SpellSlots.Count) % SpellSlots.Count;
+        if(SpellSlots[m_attackIndex].Spell)
+            m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
 
     }
 }

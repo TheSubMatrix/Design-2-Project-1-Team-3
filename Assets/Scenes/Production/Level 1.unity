@@ -1896,6 +1896,7 @@ GameObject:
   - component: {fileID: 593812983}
   - component: {fileID: 593812985}
   - component: {fileID: 593812984}
+  - component: {fileID: 593812986}
   m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
@@ -1961,6 +1962,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 593812982}
   m_CullTransparentMesh: 1
+--- !u!114 &593812986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593812982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e371068f03fe03d4da457a958eeb1e18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_healthBar: {fileID: 894953047}
 --- !u!1 &596629719
 GameObject:
   m_ObjectHideFlags: 0
@@ -2803,6 +2817,82 @@ PrefabInstance:
     - target: {fileID: 5602804749662027343, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: <CurrentHealth>k__BackingField
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnDamagedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealthInitializedEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 593812986}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 593812986}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealthInitializedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 593812986}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealthInitializedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealthInitializedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InitializeHealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HealthBar, UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HealthBar, UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealthInitializedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: HealthBar, UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnDamagedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnHealthInitializedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

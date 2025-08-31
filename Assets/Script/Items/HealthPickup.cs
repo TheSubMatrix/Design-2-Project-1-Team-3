@@ -7,7 +7,13 @@ public class HealthPickup : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer != LayerMask.NameToLayer("Player")) return;
-        other.gameObject.GetComponent<IHealable>()?.Heal(m_healAmount);
+        IHealable healable = other.gameObject.GetComponent<IHealable>();
+        if (healable is null || !healable.IsHealable) return;
+        healable.Heal(m_healAmount);
         Destroy(gameObject);
+    }
+    void Update()
+    {
+        transform.Rotate(Vector3.up, 100 * Time.deltaTime);
     }
 }

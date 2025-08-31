@@ -49,6 +49,13 @@ public class Projectile : MonoBehaviour
         OnPullEvent?.Invoke();
     }
     
+    public static Projectile OnSpawn(GameObject prefab)
+    {
+        GameObject go = Instantiate(prefab);
+        go.SetActive(false);
+        return go.GetComponent<Projectile>();
+    }
+    
     /// <summary>
     /// Initializes the <see cref="Projectile"/> with the given position, rotation
     /// </summary>

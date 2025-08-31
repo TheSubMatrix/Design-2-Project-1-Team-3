@@ -1,14 +1,16 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
 public class NewWeaponItem : MonoBehaviour
 {
+    [SerializeField] float m_rotationSpeed;
     [SerializeField]StaffSpellSO m_staffSpellToGive;
 
     void OnTriggerEnter(Collider other)
     {
-        Staff staff = other.gameObject.GetComponentInChildren<CameraControl>().m_cam.GetComponentInChildren<Staff>();
+        Staff staff = other.gameObject.GetComponentInChildren<CameraControl>()?.m_cam.GetComponentInChildren<Staff>();
         if (staff is null)
         {
             Debug.Log("No staff found");
@@ -33,5 +35,10 @@ public class NewWeaponItem : MonoBehaviour
                 return;
             }
         }
+    }
+
+    void Update()
+    {
+        transform.Rotate(Vector3.up, 100 * Time.deltaTime);
     }
 }

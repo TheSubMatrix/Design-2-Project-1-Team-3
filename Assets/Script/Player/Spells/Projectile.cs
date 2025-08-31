@@ -71,7 +71,7 @@ public class Projectile : MonoBehaviour
     {
         ProjectileRigidbody.linearVelocity = Vector3.zero;
         ProjectileRigidbody.AddForce(projectileVelocity, ForceMode.Impulse);
-        StartCoroutine(DestroyProjectileAfterTimeAsync());
+        m_destroyAfterTime = StartCoroutine(DestroyProjectileAfterTimeAsync());
         OnFireEvent?.Invoke();
     }
 
@@ -99,8 +99,8 @@ public class Projectile : MonoBehaviour
         {
             contact.otherCollider.gameObject.GetComponent<IDamageable>()?.Damage(Damage);
         }
-        if (gameObject.activeSelf)
-            Pool?.Release(this);
+        if (!gameObject.activeSelf) return;
+        Pool?.Release(this);
     }
 
     /// <summary>

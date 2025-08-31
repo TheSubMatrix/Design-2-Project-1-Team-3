@@ -2802,6 +2802,18 @@ PrefabInstance:
       propertyPath: m_fireSound.PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[0].Spell
+      value: 
+      objectReference: {fileID: 11400000, guid: 3beb904bd0f0cd3419bc8284f8147977, type: 2}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[1].Spell
+      value: 
+      objectReference: {fileID: 11400000, guid: 11addf7dfdfc07b419ac852a2248d86f, type: 2}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: <Attacks>k__BackingField.Array.data[2].Spell
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c244718d77f7244b865189ffc20fb62, type: 2}
     - target: {fileID: 3348382607844530287, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: m_Layer
       value: 6

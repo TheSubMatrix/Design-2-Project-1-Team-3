@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class NewWeaponItem : MonoBehaviour
@@ -9,9 +10,9 @@ public class NewWeaponItem : MonoBehaviour
     {
         Staff staff = other.GetComponentInChildren<Staff>();
         if(staff is null) return;
-        if(!staff.Attacks.Contains(m_staffSpellToGive))
+        if(staff.Attacks.Where((spellAndAttacksRemaining) => spellAndAttacksRemaining.Spell == m_staffSpellToGive).ToArray().Length <= 0)
         {
-            staff.Attacks.Add(m_staffSpellToGive);
+            staff.Attacks.Add(new Staff.SpellAndAttacksRemaining(m_staffSpellToGive));
         }
     }
 }

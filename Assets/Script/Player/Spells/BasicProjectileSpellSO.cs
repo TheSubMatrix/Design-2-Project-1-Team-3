@@ -9,6 +9,10 @@ public class BasicProjectileSpellSO : StaffSpellSO
     [SerializeField][ColorUsage(false, true)] Color m_spellBallColor;
     [SerializeField] GameObject m_projectilePrefab;
     ObjectPool<Projectile> m_projectilePool;
+    [SerializeField] bool m_hasLimitedUses;
+    [OnSelectionRender(nameof(m_hasLimitedUses),true), SerializeField]
+    uint m_maxUses;
+    public override uint? UseCount => m_hasLimitedUses ? m_maxUses : null;
     public override void Initialize()
     {
         if (m_projectilePrefab?.GetComponent<Projectile>() is null)

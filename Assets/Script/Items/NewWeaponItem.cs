@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class NewWeaponItem : MonoBehaviour
 {
-    [SerializeField] float m_rotationSpeed;
+    [SerializeField] float m_rotationSpeed = 100;
+    [SerializeField] float m_bobbingSpeed = 1;
+    [SerializeField] float m_bobbingAmount = 0.25f;
     [SerializeField]StaffSpellSO m_staffSpellToGive;
-    float m_yPos;
     void OnTriggerEnter(Collider other)
     {
         Staff staff = other.gameObject.GetComponentInChildren<CameraControl>()?.m_cam.GetComponentInChildren<Staff>();
@@ -36,14 +37,9 @@ public class NewWeaponItem : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        m_yPos = transform.position.y;
-    }
-
     void Update()
     {
-        transform.Rotate(Vector3.up, 100 * Time.deltaTime);
-        transform.position = new Vector3(transform.position.x, m_yPos + (Mathf.Sin(Time.time) * 0.25f), transform.position.z);
+        transform.Rotate(Vector3.up, m_rotationSpeed * Time.deltaTime);
+        transform.position = new Vector3(transform.position.x, transform.position.y + (Mathf.Sin(Time.time * m_bobbingSpeed) * Time.deltaTime * m_bobbingAmount), transform.position.z);
     }
 }

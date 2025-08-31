@@ -1,17 +1,37 @@
-using System;
+using System.Linq;
 using UnityEngine;
+
 [RequireComponent(typeof(Collider))]
 public class NewWeaponItem : MonoBehaviour
 {
-    StaffSpellSO m_staffSpellToGive;
+    [SerializeField]StaffSpellSO m_staffSpellToGive;
 
     void OnTriggerEnter(Collider other)
     {
-        Staff staff = other.GetComponentInChildren<Staff>();
-        if(staff is null) return;
-        if(!staff.Attacks.Contains(m_staffSpellToGive))
+        Staff staff = other.gameObject.GetComponentInChildren<CameraControl>().m_cam.GetComponentInChildren<Staff>();
+        if (staff is null)
         {
-            staff.Attacks.Add(m_staffSpellToGive);
+            Debug.Log("No staff found");
+            return;
+        }
+        Staff.SpellSlot[] matchingSlots = staff.SpellSlots
+            .Where(slot => slot.Spell == m_staffSpellToGive)
+            .ToArray();
+
+        if (matchingSlots.Length <= 0)
+        {
+            staff.SpellSlots.Add(new Staff.SpellSlot(m_staffSpellToGive));
+            Destroy(gameObject);
+        }
+        else
+        {
+            foreach (Staff.SpellSlot slot in matchingSlots)
+            {
+                if (!(slot.RemainingUseCount < slot.Spell.UseCount)) continue;
+                slot.RemainingUseCount = slot.Spell.UseCount;
+                Destroy(gameObject);
+                return;
+            }
         }
     }
 }

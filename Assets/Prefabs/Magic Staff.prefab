@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_projectileFirePoint: {fileID: 7532888062582804793}
-  <Attacks>k__BackingField:
-  - {fileID: 11400000, guid: 3beb904bd0f0cd3419bc8284f8147977, type: 2}
-  - {fileID: 11400000, guid: 11addf7dfdfc07b419ac852a2248d86f, type: 2}
-  - {fileID: 11400000, guid: 0c244718d77f7244b865189ffc20fb62, type: 2}
+  m_staffBallRenderer: {fileID: 0}
+  <SpellSlots>k__BackingField:
+  - Spell: {fileID: 11400000, guid: 3beb904bd0f0cd3419bc8284f8147977, type: 2}
+  - Spell: {fileID: 11400000, guid: 11addf7dfdfc07b419ac852a2248d86f, type: 2}
+  - Spell: {fileID: 11400000, guid: 0c244718d77f7244b865189ffc20fb62, type: 2}

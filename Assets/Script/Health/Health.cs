@@ -1,13 +1,17 @@
+using System;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour, IDamageable
+public class Health : MonoBehaviour, IDamageable, IHealable
 {
     [field:SerializeField] public uint CurrentHealth { get; private set; }
     [field:SerializeField] public uint MaxHealth { get; private set; }
-    public UnityEvent OnDamagedEvent = new();
-    public UnityEvent OnHealedEvent = new();
+    public UnityEvent<uint, uint> OnHealthInitializedEvent = new();
+    [Serializable]
+    public class HealthEvent : UnityEvent<uint, uint> { }
+    public HealthEvent OnDamagedEvent = new();
+    public HealthEvent OnHealedEvent = new();
     public UnityEvent OnDeathEvent = new();
     public UnityEvent OnReviveEvent = new();
     public UnityEvent OnBecameInvulnerableEvent = new();
@@ -15,11 +19,13 @@ public class Health : MonoBehaviour, IDamageable
     [SerializeField] bool m_invulnerabilityAfterDamage;
     [SerializeField] float m_invulnerabilityTime = 1;
     CancellationTokenSource m_cancellationTokenSource;
+    
     public bool IsAlive => CurrentHealth > 0;
     public bool IsInvulnerable { get; private set; }
     public void Awake()
     {
         CurrentHealth = MaxHealth;
+        OnHealthInitializedEvent.Invoke(CurrentHealth, MaxHealth);
         m_cancellationTokenSource = new CancellationTokenSource();
     }
     
@@ -27,9 +33,10 @@ public class Health : MonoBehaviour, IDamageable
     {
         if (IsInvulnerable)
             return;
+        uint oldHealth = CurrentHealth;
         bool currentAliveState = IsAlive;
         CurrentHealth -= CurrentHealth > damage ? damage : CurrentHealth;
-        OnDamagedEvent.Invoke();
+        OnDamagedEvent.Invoke(oldHealth, CurrentHealth);
         if (currentAliveState != IsAlive)
         {
             OnDeathEvent.Invoke();
@@ -44,15 +51,18 @@ public class Health : MonoBehaviour, IDamageable
 
     public void Heal(uint heal)
     {
+        uint oldHealth = CurrentHealth;
         bool currentAliveState = IsAlive;
         CurrentHealth += CurrentHealth < MaxHealth ? heal : MaxHealth;
-        OnHealedEvent.Invoke();
+        OnHealedEvent.Invoke(oldHealth, CurrentHealth);
         if (currentAliveState != IsAlive)
         {
             OnReviveEvent.Invoke();
         }
     }
-    
+
+    public MonoBehaviour CurrentMonoBehaviour => this;
+
     public void MakeInvulnerable()
     {
         IsInvulnerable = true;

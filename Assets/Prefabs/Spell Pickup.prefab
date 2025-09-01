@@ -67,7 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356cd6f5af94b454db7d7b420da1a1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_rotationSpeed: 0
+  m_rotationSpeed: 100
+  m_bobbingSpeed: 2
+  m_bobbingAmount: 0.25
   m_staffSpellToGive: {fileID: 11400000, guid: 11addf7dfdfc07b419ac852a2248d86f, type: 2}
 --- !u!1001 &5303041817896076237
 PrefabInstance:

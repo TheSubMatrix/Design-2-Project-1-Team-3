@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 9226851}
   - component: {fileID: 9226853}
   - component: {fileID: 9226852}
+  - component: {fileID: 9226854}
   m_Layer: 0
   m_Name: Pillar (13)
   m_TagString: Untagged
@@ -205,6 +206,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9226850}
   m_Mesh: {fileID: -8116138440861595531, guid: 48dcf719da5fc114082c941efbdc280e, type: 3}
+--- !u!65 &9226854
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9226850}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000003, y: 0.02, z: 0.020000005}
+  m_Center: {x: 0.000000031199306, y: 2.3283064e-10, z: -0.0000000018626451}
 --- !u!1001 &16721475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -425,6 +447,7 @@ GameObject:
   - component: {fileID: 25156538}
   - component: {fileID: 25156540}
   - component: {fileID: 25156539}
+  - component: {fileID: 25156541}
   m_Layer: 0
   m_Name: Pillar (6)
   m_TagString: Untagged
@@ -500,6 +523,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25156537}
   m_Mesh: {fileID: -8116138440861595531, guid: 48dcf719da5fc114082c941efbdc280e, type: 3}
+--- !u!65 &25156541
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25156537}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000003, y: 0.02, z: 0.020000005}
+  m_Center: {x: 0.000000016298145, y: 2.3283064e-10, z: -0.0000000018626451}
 --- !u!1 &42292070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1069,7 @@ GameObject:
   - component: {fileID: 76718209}
   - component: {fileID: 76718211}
   - component: {fileID: 76718210}
+  - component: {fileID: 76718212}
   m_Layer: 0
   m_Name: Pillar (7)
   m_TagString: Untagged
@@ -1100,6 +1145,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76718208}
   m_Mesh: {fileID: -8116138440861595531, guid: 48dcf719da5fc114082c941efbdc280e, type: 3}
+--- !u!65 &76718212
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76718208}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000003, y: 0.02, z: 0.020000005}
+  m_Center: {x: 0.000000016298145, y: 2.3283064e-10, z: 0.000000117346644}
 --- !u!1 &95435626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1393,7 @@ GameObject:
   - component: {fileID: 144159287}
   - component: {fileID: 144159289}
   - component: {fileID: 144159288}
+  - component: {fileID: 144159290}
   m_Layer: 0
   m_Name: Pillar (9)
   m_TagString: Untagged
@@ -1402,6 +1469,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144159286}
   m_Mesh: {fileID: -8116138440861595531, guid: 48dcf719da5fc114082c941efbdc280e, type: 3}
+--- !u!65 &144159290
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144159286}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000003, y: 0.02, z: 0.020000005}
+  m_Center: {x: 0.0000000013969839, y: 2.3283064e-10, z: -0.00000024028122}
 --- !u!1 &165240773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,6 +1825,7 @@ GameObject:
   - component: {fileID: 252859076}
   - component: {fileID: 252859078}
   - component: {fileID: 252859077}
+  - component: {fileID: 252859079}
   m_Layer: 0
   m_Name: Pillar (11)
   m_TagString: Untagged
@@ -1752,13 +1841,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252859075}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.6236, y: 0.0137, z: -2.1501}
+  m_LocalRotation: {x: 0.022085408, y: 0.022085411, z: 0.70676184, w: 0.70676184}
+  m_LocalPosition: {x: -0.624, y: 0.0137, z: -2.1571}
   m_LocalScale: {x: 0.7950042, y: 4.4271007, z: 0.7950042}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450651723550682}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 3.58, z: 90}
 --- !u!23 &252859077
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1812,6 +1901,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252859075}
   m_Mesh: {fileID: -8116138440861595531, guid: 48dcf719da5fc114082c941efbdc280e, type: 3}
+--- !u!65 &252859079
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252859075}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03276512, y: 0.020000005, z: 0.029623248}
+  m_Center: {x: 0.0063824905, y: -0.000000015139042, z: -0.0048113666}
 --- !u!1 &268104249
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,6 +3322,7 @@ GameObject:
   - component: {fileID: 589021261}
   - component: {fileID: 589021263}
   - component: {fileID: 589021262}
+  - component: {fileID: 589021264}
   m_Layer: 0
   m_Name: Pillar (14)
   m_TagString: Untagged
@@ -3287,6 +3398,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589021260}
   m_Mesh: {fileID: -8116138440861595531, guid: 48dcf719da5fc114082c941efbdc280e, type: 3}
+--- !u!65 &589021264
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589021260}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000003, y: 0.02, z: 0.020000005}
+  m_Center: {x: -0.00000005820766, y: 2.3283064e-10, z: 0.0000004749745}
 --- !u!1 &593812982
 GameObject:
   m_ObjectHideFlags: 0
@@ -4122,6 +4254,7 @@ GameObject:
   - component: {fileID: 787971847}
   - component: {fileID: 787971849}
   - component: {fileID: 787971848}
+  - component: {fileID: 787971850}
   m_Layer: 0
   m_Name: Pillar (10)
   m_TagString: Untagged
@@ -4197,6 +4330,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787971846}
   m_Mesh: {fileID: -8116138440861595531, guid: 48dcf719da5fc114082c941efbdc280e, type: 3}
+--- !u!65 &787971850
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787971846}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000003, y: 0.02, z: 0.020000005}
+  m_Center: {x: 0.0000000088475645, y: 2.3283064e-10, z: -0.0000000018626451}
 --- !u!1 &800373661
 GameObject:
   m_ObjectHideFlags: 0
@@ -7515,6 +7669,7 @@ GameObject:
   - component: {fileID: 1683507896}
   - component: {fileID: 1683507898}
   - component: {fileID: 1683507897}
+  - component: {fileID: 1683507899}
   m_Layer: 0
   m_Name: Pillar (15)
   m_TagString: Untagged
@@ -7590,6 +7745,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683507895}
   m_Mesh: {fileID: -8116138440861595531, guid: 48dcf719da5fc114082c941efbdc280e, type: 3}
+--- !u!65 &1683507899
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683507895}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000003, y: 0.02, z: 0.020000005}
+  m_Center: {x: 0.0000000013969839, y: 2.3283064e-10, z: 0.0000004749745}
 --- !u!1 &1683604542
 GameObject:
   m_ObjectHideFlags: 0
@@ -7601,6 +7777,7 @@ GameObject:
   - component: {fileID: 1683604543}
   - component: {fileID: 1683604545}
   - component: {fileID: 1683604544}
+  - component: {fileID: 1683604546}
   m_Layer: 0
   m_Name: Pillar (8)
   m_TagString: Untagged
@@ -7676,6 +7853,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683604542}
   m_Mesh: {fileID: -8116138440861595531, guid: 48dcf719da5fc114082c941efbdc280e, type: 3}
+--- !u!65 &1683604546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683604542}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000003, y: 0.02, z: 0.020000005}
+  m_Center: {x: 0.0000000013969839, y: 2.3283064e-10, z: 0.000000117346644}
 --- !u!1 &1696291937
 GameObject:
   m_ObjectHideFlags: 0
@@ -8807,6 +9005,7 @@ GameObject:
   - component: {fileID: 2030529588}
   - component: {fileID: 2030529590}
   - component: {fileID: 2030529589}
+  - component: {fileID: 2030529591}
   m_Layer: 0
   m_Name: Pillar (12)
   m_TagString: Untagged
@@ -8882,6 +9081,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030529587}
   m_Mesh: {fileID: -8116138440861595531, guid: 48dcf719da5fc114082c941efbdc280e, type: 3}
+--- !u!65 &2030529591
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030529587}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000003, y: 0.02, z: 0.020000005}
+  m_Center: {x: 0.0000000013969839, y: 2.3283064e-10, z: -0.0000000018626451}
 --- !u!1 &2031749820
 GameObject:
   m_ObjectHideFlags: 0

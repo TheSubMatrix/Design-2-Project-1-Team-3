@@ -22,6 +22,8 @@ public class Health : MonoBehaviour, IDamageable, IHealable
     
     public bool IsAlive => CurrentHealth > 0;
     public bool IsInvulnerable { get; private set; }
+    public bool IsHealable => CurrentHealth < MaxHealth;
+
     public void Awake()
     {
         CurrentHealth = MaxHealth;

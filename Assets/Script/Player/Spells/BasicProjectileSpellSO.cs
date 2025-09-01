@@ -22,7 +22,6 @@ public class BasicProjectileSpellSO : StaffSpellSO
         }
         m_projectilePool = new ObjectPool<Projectile>
         (
-            // Ensure created instances are inactive to avoid a one-frame flash at origin.
             () => Projectile.OnSpawn(m_projectilePrefab),
             projectile => projectile.OnPull(m_projectilePool),
             projectile => projectile.OnRelease(),

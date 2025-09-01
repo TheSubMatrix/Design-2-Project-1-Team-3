@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6443826423145240535}
   - component: {fileID: 4033139494777550286}
   - component: {fileID: 3639892219493462168}
-  - component: {fileID: 4048294596999905970}
   m_Layer: 0
   m_Name: Thunder Projectile
   m_TagString: Untagged
@@ -137,31 +136,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4048294596999905970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2617272852968018579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b56bec281174094bb84d8fbf09a1f88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Damage: 10
-  <Lifetime>k__BackingField: 2
-  <OnPullEvent>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  <OnInitializeEvent>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  <OnFireEvent>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  <OnReleaseEvent>k__BackingField:
-    m_PersistentCalls:
-      m_Calls: []
-  m_duration: 5
-  m_slowAmount: 0.25

@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Pool;
 [RequireComponent(typeof(Rigidbody))]
 public class SlowProjectile : Projectile
 {

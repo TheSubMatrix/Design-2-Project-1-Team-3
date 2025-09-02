@@ -49,6 +49,13 @@ public class Projectile : MonoBehaviour
         OnPullEvent?.Invoke();
     }
     
+    public static Projectile OnSpawn(GameObject prefab)
+    {
+        GameObject go = Instantiate(prefab);
+        go.SetActive(false);
+        return go.GetComponent<Projectile>();
+    }
+    
     /// <summary>
     /// Initializes the <see cref="Projectile"/> with the given position, rotation
     /// </summary>
@@ -71,7 +78,7 @@ public class Projectile : MonoBehaviour
     {
         ProjectileRigidbody.linearVelocity = Vector3.zero;
         ProjectileRigidbody.AddForce(projectileVelocity, ForceMode.Impulse);
-        StartCoroutine(DestroyProjectileAfterTimeAsync());
+        m_destroyAfterTime = StartCoroutine(DestroyProjectileAfterTimeAsync());
         OnFireEvent?.Invoke();
     }
 
@@ -99,8 +106,8 @@ public class Projectile : MonoBehaviour
         {
             contact.otherCollider.gameObject.GetComponent<IDamageable>()?.Damage(Damage);
         }
-        if (gameObject.activeSelf)
-            Pool?.Release(this);
+        if (!gameObject.activeSelf) return;
+        Pool?.Release(this);
     }
 
     /// <summary>

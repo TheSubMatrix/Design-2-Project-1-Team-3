@@ -22,7 +22,7 @@ public class BasicProjectileSpellSO : StaffSpellSO
         }
         m_projectilePool = new ObjectPool<Projectile>
         (
-            () => Instantiate(m_projectilePrefab).GetComponent<Projectile>(), 
+            () => Projectile.OnSpawn(m_projectilePrefab),
             projectile => projectile.OnPull(m_projectilePool),
             projectile => projectile.OnRelease(),
             projectile => Destroy(projectile.gameObject)
@@ -35,5 +35,4 @@ public class BasicProjectileSpellSO : StaffSpellSO
         projectileFromPool.OnInitialize(position,rotation);
         projectileFromPool.OnFire(direction * 10);
     }
-
 }

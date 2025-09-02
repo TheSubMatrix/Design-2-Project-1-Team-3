@@ -6,7 +6,6 @@ using UnityEngine.Pool;
 [RequireComponent(typeof(Rigidbody))]
 public class DamageOverTimeProjectile : Projectile
 {
-    //i change fire ball mass to .75
     [SerializeField] protected float m_duration = 10;
     delegate void DamageDelegate(uint damage);
     protected override void OnCollisionEnter(Collision collision)
@@ -17,11 +16,9 @@ public class DamageOverTimeProjectile : Projectile
             IDamageable damageable = contact.otherCollider.gameObject.GetComponent<IDamageable>();
             damageable?.CurrentMonoBehaviour.StartCoroutine(DamageOverTimeAsync(m_duration, Damage,contact.otherCollider.gameObject.GetComponent<IDamageable>().Damage));
         }
-
-        if (gameObject.activeSelf)
-        {
-            Pool?.Release(this);
-        }
+        if (!gameObject.activeSelf) return;
+        Pool?.Release(this);
+        
     }
 
     IEnumerator DamageOverTimeAsync(float totalDuration, uint totalDamage, DamageDelegate onDamage)

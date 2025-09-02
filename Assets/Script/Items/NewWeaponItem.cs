@@ -1,17 +1,19 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
 public class NewWeaponItem : MonoBehaviour
 {
+    [SerializeField] float m_rotationSpeed = 100;
+    [SerializeField] float m_bobbingSpeed = 1;
+    [SerializeField] float m_bobbingAmount = 0.25f;
     [SerializeField]StaffSpellSO m_staffSpellToGive;
-
     void OnTriggerEnter(Collider other)
     {
-        Staff staff = other.gameObject.GetComponentInChildren<CameraControl>().m_cam.GetComponentInChildren<Staff>();
+        Staff staff = other.gameObject.GetComponentInChildren<CameraControl>()?.m_cam.GetComponentInChildren<Staff>();
         if (staff is null)
         {
-            Debug.Log("No staff found");
             return;
         }
         Staff.SpellSlot[] matchingSlots = staff.SpellSlots
@@ -33,5 +35,11 @@ public class NewWeaponItem : MonoBehaviour
                 return;
             }
         }
+    }
+
+    void Update()
+    {
+        transform.Rotate(Vector3.up, m_rotationSpeed * Time.deltaTime);
+        transform.position = new Vector3(transform.position.x, transform.position.y + (Mathf.Sin(Time.time * m_bobbingSpeed) * Time.deltaTime * m_bobbingAmount), transform.position.z);
     }
 }

@@ -203,7 +203,6 @@ MonoBehaviour:
   m_Graph: {fileID: 6200732012914731041, guid: 73230f780f37f424c9303037bc917c80, type: 2}
   m_BlackboardVariableOverridesList:
   - rid: 3789101202827903245
-  - rid: 3789101202827903246
   - rid: 3789101202827903281
   - rid: 3789101248851476634
   - rid: 3789101257170879173
@@ -220,16 +219,6 @@ MonoBehaviour:
           m_Value1: 0
         Name: Self
         m_Value: {fileID: 1820044253085880671}
-    - rid: 3789101202827903246
-      type: {class: 'BlackboardVariable`1[[System.Collections.Generic.List`1[[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 13091989877805024987
-          m_Value1: 10664939278814583204
-        Name: Patrol Waypoints
-        m_Value:
-        - {fileID: 0}
-        - {fileID: 0}
     - rid: 3789101202827903281
       type: {class: 'BlackboardVariable`1[[VisionSensor, Enemies]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:

@@ -13,8 +13,8 @@ public class DamageOverTimeProjectile : Projectile
 
         foreach (ContactPoint contact in collision.contacts)
         { 
-            IDamageable damageable = contact.otherCollider.gameObject.GetComponent<IDamageable>();
-            damageable?.CurrentMonoBehaviour.StartCoroutine(DamageOverTimeAsync(m_duration, Damage,contact.otherCollider.gameObject.GetComponent<IDamageable>().Damage));
+            IFlammable damageable = contact.otherCollider.gameObject.GetComponent<IFlammable>();
+            damageable?.CurrentMonoBehaviour.StartCoroutine(DamageOverTimeAsync(m_duration, Damage, contact.otherCollider.gameObject.GetComponent<IDamageable>().Damage));
         }
         if (!gameObject.activeSelf) return;
         Pool?.Release(this);

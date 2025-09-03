@@ -3,7 +3,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour, IDamageable, IHealable
+public class Health : MonoBehaviour, IDamageable, IFlammable, IHealable
 {
     [field:SerializeField] public uint CurrentHealth { get; private set; }
     [field:SerializeField] public uint MaxHealth { get; private set; }
@@ -49,8 +49,6 @@ public class Health : MonoBehaviour, IDamageable, IHealable
         InvulnerableFor(m_invulnerabilityTime, cts.Token);
     }
 
-    MonoBehaviour IDamageable.CurrentMonoBehaviour => this;
-
     public void Heal(uint heal)
     {
         uint oldHealth = CurrentHealth;
@@ -64,6 +62,7 @@ public class Health : MonoBehaviour, IDamageable, IHealable
     }
 
     public MonoBehaviour CurrentMonoBehaviour => this;
+    public IDamageable CurrentDamageable => this;
 
     public void MakeInvulnerable()
     {

@@ -1,36 +1,27 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
-public class SpinningFan : MonoBehaviour//,ISlowable
+public class SpinningFan : MonoBehaviour, ISlowable
 {
-    private float fanSpeed = 400f;
-    private bool Froozen = false;
-    // Update is called once per frame
-    void Update()
+    [SerializeField] float m_fanSpeed = 400f;
+    bool m_frozen;
+    Coroutine m_slowCoroutine;
+    public void Slow(float slowAmount, float duration)
     {
+        StartCoroutine(SlowForTimeAsync(slowAmount, duration));
+    }
+    
+    public void Update()
+    {
+        if(m_frozen) return;   
+        transform.Rotate(0, m_fanSpeed * Time.deltaTime, 0);
+    }
 
-        transform.Rotate(fanSpeed * Time.deltaTime, 0, 0);
-    }
-    public void OnTriggerEnter(Collider other)
+    IEnumerator SlowForTimeAsync(float slowPercent, float duration)
     {
-        if (other.gameObject.CompareTag("Ice")&& Froozen == false)
-        {
-            //plays an auido of correct sound
-            Froozen = true;
-        fanSpeed = 40f;
-            Invoke("slowsDown", 5f);
-        }
-        else if (other.gameObject.CompareTag("Fire") || other.gameObject.CompareTag("Thunder"))
-        {
-        //plays an auido of incorrect sound
-        }
-        if (other.gameObject.CompareTag("Player"))
-          {
-         //takes damage if gets moves backwards (so the player doesnt get comboed)
-          }
-    }
-    public void slowsDown()
-    {
-        Froozen = false;
-        fanSpeed = 400f;
+        m_frozen = true;
+        yield return new WaitForSeconds(duration);
+        m_frozen = false;
     }
 }

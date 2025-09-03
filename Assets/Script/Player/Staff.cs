@@ -6,7 +6,7 @@ using AudioSystem;
 
 public class Staff : MonoBehaviour
 {
-    [SerializeField] Transform m_projectileFirePoint;
+    [FormerlySerializedAs("m_projectileFirePoint")] [SerializeField] Transform m_firePoint;
     [SerializeField] Renderer m_staffBallRenderer;
     [field: FormerlySerializedAs("<Attacks>k__BackingField")] [field:SerializeField] public List<SpellSlot> SpellSlots{ get; set;}
 
@@ -24,7 +24,7 @@ public class Staff : MonoBehaviour
     int m_attackIndex;
     public void Attack()
     {
-        SpellSlots[m_attackIndex].Spell?.ExecuteAttack(gameObject, m_projectileFirePoint.position, transform.forward, m_projectileFirePoint.rotation);
+        SpellSlots[m_attackIndex].Spell?.ExecuteAttack(m_firePoint.gameObject, m_firePoint.position, transform.forward, m_firePoint.rotation);
         SoundManager.Instance.CreateSound().WithSoundData(SpellSlots[m_attackIndex].Spell?.CastSound).WithPosition(transform.position).WithRandomPitch().Play();
         if (SpellSlots[m_attackIndex].RemainingUseCount is not > 0) return;
         SpellSlots[m_attackIndex].RemainingUseCount--;

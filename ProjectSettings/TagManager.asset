@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Floor
+  - Breakable
+  - Ice
+  - Fire
+  - Thunder
+  - GointToLevel2
   layers:
   - Default
   - TransparentFX

@@ -8,29 +8,25 @@ public class SpinningFan : MonoBehaviour//,ISlowable
     void Update()
     {
 
-        transform.Rotate(0, 0, fanSpeed * Time.deltaTime);
+        transform.Rotate(fanSpeed * Time.deltaTime, 0, 0);
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (/* when prefab ice colliders with fan &&*/Froozen == false )
+        if (other.gameObject.CompareTag("Ice")&& Froozen == false)
         {
-            //plays an auido of incorrect sound
+            //plays an auido of correct sound
             Froozen = true;
         fanSpeed = 40f;
             Invoke("slowsDown", 5f);
         }
-        /*
-        else if (  when player shoots at the wall that is not ice)
+        else if (other.gameObject.CompareTag("Fire") || other.gameObject.CompareTag("Thunder"))
         {
-        plays an auido of incorrect sound
+        //plays an auido of incorrect sound
         }
-        */
-
-        /*if (when player enter the fans hit box)
-         * {
-         *takes damage if gets moves backwards (so the player doesnt get comboed)
-         * }
-         */
+        if (other.gameObject.CompareTag("Player"))
+          {
+         //takes damage if gets moves backwards (so the player doesnt get comboed)
+          }
     }
     public void slowsDown()
     {

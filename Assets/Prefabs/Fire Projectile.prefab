@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 8908921196848594678}
   - component: {fileID: -6095944583642922091}
   - component: {fileID: 1496756438564586940}
+  - component: {fileID: 485241057762797373}
   m_Layer: 7
   m_Name: Fire Projectile
   m_TagString: Untagged
@@ -359,3 +360,15 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &485241057762797373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629056565955650697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52a56a1c5d832144aa3db8efdeb3aa37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

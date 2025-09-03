@@ -10,33 +10,14 @@ public class DamageOverTimeProjectile : Projectile
     delegate void DamageDelegate(uint damage);
     protected override void OnCollisionEnter(Collision collision)
     {
-
         foreach (ContactPoint contact in collision.contacts)
         { 
-            IFlammable damageable = contact.otherCollider.gameObject.GetComponent<IFlammable>();
-            damageable?.CurrentMonoBehaviour.StartCoroutine(DamageOverTimeAsync(m_duration, Damage, contact.otherCollider.gameObject.GetComponent<IDamageable>().Damage));
+            IFlammable flammable = contact.otherCollider.gameObject.GetComponent<IFlammable>();
+            flammable?.OnSetFire(m_duration, Damage);
         }
         if (!gameObject.activeSelf) return;
         Pool?.Release(this);
         
     }
-
-    IEnumerator DamageOverTimeAsync(float totalDuration, uint totalDamage, DamageDelegate onDamage)
-    {
-        if (onDamage == null || totalDamage == 0)
-            yield break;
-
-        if (totalDuration <= 0f)
-        {
-            onDamage(totalDamage);
-            yield break;
-        }
-        
-        float interval = totalDuration / totalDamage;
-        for (uint i = 0; i < totalDamage; i++)
-        {
-            yield return new WaitForSeconds(interval);
-            onDamage(1);
-        }
-    }
+    
 }

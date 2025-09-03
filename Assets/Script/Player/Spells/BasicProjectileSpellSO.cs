@@ -29,7 +29,7 @@ public class BasicProjectileSpellSO : StaffSpellSO
         );
         
     }
-    public override void ExecuteAttack(Vector3 position,Vector3 direction, Quaternion rotation)
+    public override void ExecuteAttack(GameObject attackingObject, Vector3 position,Vector3 direction, Quaternion rotation)
     {
         Projectile projectileFromPool = m_projectilePool.Get();
         projectileFromPool.OnInitialize(position,rotation);

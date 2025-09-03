@@ -12,7 +12,7 @@ public abstract class StaffSpellSO : ScriptableObject, IEquatable<StaffSpellSO>
     public abstract void Initialize();
     public virtual Color SpellBallColor { get; private set; }
     public abstract uint? UseCount { get; }
-    public abstract void ExecuteAttack(Vector3 position, Vector3 direction, Quaternion rotation);
+    public abstract void ExecuteAttack(GameObject attackingObject, Vector3 position, Vector3 direction, Quaternion rotation);
     public bool Equals(StaffSpellSO other)
     {
         return other != null && SpellName == other.SpellName;

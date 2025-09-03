@@ -1,9 +1,13 @@
 using UnityEngine;
 using System;
+using CustomNamespace.Extensions;
+using UnityEngine.VFX;
+
 [CreateAssetMenu(menuName = "Scriptable Objects/Spells/Thunder Spell", fileName = "New Thunder Spell"), Serializable]
 public class ThunderSpell : StaffSpellSO
 {
     public override Color SpellBallColor => m_spellBallColor;
+    [SerializeField] VisualEffectAsset m_spellEffect;
     [SerializeField][ColorUsage(false, true)] Color m_spellBallColor;
     [SerializeField] bool m_hasLimitedUses;
     [OnSelectionRender(nameof(m_hasLimitedUses),true), SerializeField]
@@ -14,11 +18,15 @@ public class ThunderSpell : StaffSpellSO
     {
         
     }
-    public override void ExecuteAttack(Vector3 position, Vector3 direction, Quaternion rotation)
+    public override void ExecuteAttack(GameObject attackingObject, Vector3 position, Vector3 direction, Quaternion rotation)
     {
-        if (Physics.Raycast(position, direction, out RaycastHit hit))
+        if (!Physics.Raycast(position, direction, out RaycastHit hit)) return;
+        ThunderSpellVFX thunderSpellVFX = attackingObject.GetComponent<ThunderSpellVFX>();
+        if (thunderSpellVFX)
         {
-            hit.collider.gameObject.GetComponent<IDamageable>()?.Damage(10);
+            thunderSpellVFX.PlayVFX(new []{ new ThunderSpellVFX.BoltPosition(hit.point, attackingObject.transform.position)});
         }
+        IDamageable damageable = hit.collider.gameObject.GetComponent<IDamageable>();
+        damageable?.Damage(10);
     }
 }

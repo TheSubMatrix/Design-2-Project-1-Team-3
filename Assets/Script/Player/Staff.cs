@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using AudioSystem;
+using UnityEngine.Events;
 
 public class Staff : MonoBehaviour
 {
+    [SerializeField]
+    UnityEvent <uint?> OnStaffSpellChange = new UnityEvent<uint?>();
     [FormerlySerializedAs("m_projectileFirePoint")] [SerializeField] Transform m_firePoint;
     [SerializeField] Renderer m_staffBallRenderer;
     [field: FormerlySerializedAs("<Attacks>k__BackingField")] [field:SerializeField] public List<SpellSlot> SpellSlots{ get; set;}
@@ -62,7 +65,8 @@ public class Staff : MonoBehaviour
 
         if (SpellSlots.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;
         m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + SpellSlots.Count) % SpellSlots.Count;
-        if(SpellSlots[m_attackIndex].Spell)
+        OnStaffSpellChange.Invoke(SpellSlots[m_attackIndex].RemainingUseCount);
+        if (SpellSlots[m_attackIndex].Spell)
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
 
     }

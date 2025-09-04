@@ -2,10 +2,12 @@ using UnityEngine;
 using System;
 using CustomNamespace.Extensions;
 using UnityEngine.VFX;
+//using TMPro;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Spells/Thunder Spell", fileName = "New Thunder Spell"), Serializable]
 public class ThunderSpell : StaffSpellSO
 {
+    //public TMP_Text name;
     public override Color SpellBallColor => m_spellBallColor;
     [SerializeField] LayerMask m_layerMask;
     [SerializeField] VisualEffectAsset m_spellEffect;

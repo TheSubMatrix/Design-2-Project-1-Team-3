@@ -16,13 +16,14 @@ public class EnemyMovementSpeedBehaviorModifier : MonoBehaviour, ISlowable
     void Start()
     {
         m_agent ??= GetComponent<BehaviorGraphAgent>();
-        if (!m_agent.GetVariable(m_speedVariableName, out m_speedVariable)) return;
+        if (!m_agent.GetVariable(m_speedVariableName, out m_speedVariable)) {Debug.LogWarning("Variable not found"); return;};
         m_defaultSpeed = m_speedVariable.Value;
     }
 
     public void Slow(float slowPercent, float duration)
     {
-        if (m_slowCoroutine != null) StopCoroutine(m_slowCoroutine);
+        if (m_slowCoroutine != null) { StopCoroutine(m_slowCoroutine); }
+        Debug.Log("Slowed");
         m_speedVariable.Value = m_defaultSpeed;
         m_navMeshAgent.speed = m_defaultSpeed;
         m_slowCoroutine = StartCoroutine(SlowForTimeAsync(slowPercent, duration));

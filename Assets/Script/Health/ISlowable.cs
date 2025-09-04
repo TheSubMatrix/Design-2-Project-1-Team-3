@@ -2,5 +2,6 @@ using UnityEngine;
 
 public interface ISlowable
 {
-    void Slow(float slowAmount, float duration);
+    public void Slow(float slowAmount, float duration);
+    
 }

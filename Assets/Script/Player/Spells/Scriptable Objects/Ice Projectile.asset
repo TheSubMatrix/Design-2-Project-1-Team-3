@@ -34,3 +34,5 @@ MonoBehaviour:
   <SpellSprite>k__BackingField: {fileID: 21300000, guid: 272d5d551d011e14ab07a4987e6f0f41, type: 3}
   m_spellBallColor: {r: 0.07730149, g: 0.66688764, b: 0.87169814, a: 0}
   m_projectilePrefab: {fileID: 7629056565955650697, guid: 51dc92794f0d3cb4da4314d457f0a7be, type: 3}
+  m_hasLimitedUses: 1
+  m_maxUses: 10

@@ -16124,6 +16124,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnStaffSpellChange.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnStaffSpellChange.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 893179645}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnStaffSpellChange.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnStaffSpellChange.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateSpellUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnStaffSpellChange.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpellsUI, UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: OnStaffSpellChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: OnHealedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -16151,8 +16175,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5489141050948415338, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 893179645}
   m_SourcePrefab: {fileID: 100100000, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+--- !u!1 &893179644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5489141050948415338, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+  m_PrefabInstance: {fileID: 893179643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &893179645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893179644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be62a22d4276ac84e919f397ac713f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &894953045
 GameObject:
   m_ObjectHideFlags: 0

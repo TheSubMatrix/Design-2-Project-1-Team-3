@@ -13,7 +13,7 @@ public class SpellsUI : MonoBehaviour
     {
         
     }
-    public void UpdateSpellUI(uint SpellsRemaining)
+    public void UpdateSpellUI(uint? SpellsRemaining)
     {
         //
     }

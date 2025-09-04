@@ -7,6 +7,7 @@ using UnityEngine.VFX;
 public class ThunderSpell : StaffSpellSO
 {
     public override Color SpellBallColor => m_spellBallColor;
+    [SerializeField] LayerMask m_layerMask;
     [SerializeField] VisualEffectAsset m_spellEffect;
     [SerializeField][ColorUsage(false, true)] Color m_spellBallColor;
     [SerializeField] bool m_hasLimitedUses;
@@ -20,7 +21,7 @@ public class ThunderSpell : StaffSpellSO
     }
     public override void ExecuteAttack(GameObject attackingObject, Vector3 position, Vector3 direction, Quaternion rotation)
     {
-        if (!Physics.Raycast(position, direction, out RaycastHit hit)) return;
+        if (!Physics.Raycast(position, direction, out RaycastHit hit, Mathf.Infinity, m_layerMask, QueryTriggerInteraction.Ignore)) return;
         ThunderSpellVFX thunderSpellVFX = attackingObject.GetComponent<ThunderSpellVFX>();
         if (thunderSpellVFX)
         {

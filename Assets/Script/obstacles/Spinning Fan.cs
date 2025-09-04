@@ -15,7 +15,7 @@ public class SpinningFan : MonoBehaviour, ISlowable
     public void Update()
     {
         if(m_frozen) return;   
-        transform.Rotate(0, m_fanSpeed * Time.deltaTime, 0);
+        transform.Rotate(m_fanSpeed * Time.deltaTime, 0, 0);
     }
 
     IEnumerator SlowForTimeAsync(float slowPercent, float duration)

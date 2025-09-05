@@ -16084,6 +16084,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Player Test Model
       objectReference: {fileID: 0}
+    - target: {fileID: 2537819777101645047, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3072698354970845641, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.98
@@ -16147,6 +16151,10 @@ PrefabInstance:
     - target: {fileID: 3232102873692159615, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: OnStaffSpellChange.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754571524395720203, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9085728599367881077, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: OnHealedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target

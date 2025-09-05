@@ -27,15 +27,17 @@ public class Staff : MonoBehaviour
     int m_attackIndex;
     public struct SpellData 
     {
-        public SpellData(string selectedSpell, uint? selectedSpellUses, Color spellColor)
+        public SpellData(string selectedSpell, uint? selectedSpellUses, Color spellColor, Sprite spellSprite)
         { 
             SelectedSpell = selectedSpell;
             SelectedSpellUses = selectedSpellUses;
             SpellColor = spellColor;
+            SpellSprite = spellSprite;
         }
         public string SelectedSpell { get; set; }
         public uint? SelectedSpellUses { get; set; }
         public Color SpellColor { get; set; }
+        public Sprite SpellSprite { get; set; }
     }
     public void Attack()
     {
@@ -65,7 +67,7 @@ public class Staff : MonoBehaviour
             {
                 attack.RemainingUseCount = attack.Spell.UseCount;
             }
-            OnStaffSpellChange.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor));
+            OnStaffSpellChange.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
         }
     }
 
@@ -78,7 +80,7 @@ public class Staff : MonoBehaviour
 
         if (SpellSlots.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;
         m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + SpellSlots.Count) % SpellSlots.Count;
-        OnStaffSpellChange.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor));
+        OnStaffSpellChange.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
         if (SpellSlots[m_attackIndex].Spell)
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
 

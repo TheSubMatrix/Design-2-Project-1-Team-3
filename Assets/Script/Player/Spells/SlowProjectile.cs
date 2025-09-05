@@ -16,5 +16,10 @@ public class SlowProjectile : Projectile
         }
         if(gameObject.activeSelf) Pool?.Release(this);
     }
-    
+
+    void FixedUpdate()
+    {
+        if(ProjectileRigidbody.linearVelocity.magnitude <= 0) return;
+        transform.rotation = Quaternion.LookRotation(ProjectileRigidbody.linearVelocity);
+    }
 }

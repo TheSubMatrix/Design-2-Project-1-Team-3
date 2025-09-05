@@ -25,13 +25,15 @@ public class UIpauseMenu : MonoBehaviour
         {
             if (!isPaused) 
             {
+                
                 Time.timeScale = 0f;
                 Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                Cursor.visible = false;
                 Paused();
             }
             else
             {
+
                 Resume();
             }
         }
@@ -45,6 +47,7 @@ public class UIpauseMenu : MonoBehaviour
     }
     public void Resume()
     {
+        Cursor.visible = false;
         pausedMenu.SetActive(false);
         isPaused = false;
         Time.timeScale = 1.0f;

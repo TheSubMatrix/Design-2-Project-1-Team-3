@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5586360842906511273}
   - component: {fileID: 4781962792572321029}
   m_Layer: 0
-  m_Name: Spell Pickup
+  m_Name: Ice Spell Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_rotationSpeed: 100
   m_bobbingSpeed: 2
   m_bobbingAmount: 0.25
-  m_staffSpellToGive: {fileID: 11400000, guid: 11addf7dfdfc07b419ac852a2248d86f, type: 2}
+  m_staffSpellToGive: {fileID: 11400000, guid: 0c244718d77f7244b865189ffc20fb62, type: 2}
 --- !u!1001 &5303041817896076237
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,7 +134,11 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 79a8e3a4d173eaf468c60613f5c1c91b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 74e060ccbcced8c4ca892f0a73588353, type: 2}
+      objectReference: {fileID: 2100000, guid: ca9f4443bc07f9f49b99c47c76933d21, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 79a8e3a4d173eaf468c60613f5c1c91b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2546299967092184662, guid: 22faab5875108734e8937d91282dd81d, type: 3}
     - target: {fileID: 919132149155446097, guid: 79a8e3a4d173eaf468c60613f5c1c91b, type: 3}
       propertyPath: m_Name
       value: Spell_Book

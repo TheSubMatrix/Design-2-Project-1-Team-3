@@ -57,8 +57,11 @@ public class Staff : MonoBehaviour
 
     void Awake()
     {
-        if(SpellSlots[m_attackIndex].Spell)
+        if (SpellSlots[m_attackIndex].Spell)
+        {
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
+            OnStaffSpellChange?.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
+        }
         foreach (SpellSlot attack in SpellSlots)
         {
             attack.Spell?.Initialize();

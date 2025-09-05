@@ -3,7 +3,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour, IDamageable, IFlammable, IHealable
+public class Health : MonoBehaviour, IDamageable, IFlammable, IHealable, IShockable
 {
     [field:SerializeField] public uint CurrentHealth { get; private set; }
     [field:SerializeField] public uint MaxHealth { get; private set; }

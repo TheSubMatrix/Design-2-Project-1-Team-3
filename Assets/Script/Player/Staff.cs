@@ -27,16 +27,15 @@ public class Staff : MonoBehaviour
     int m_attackIndex;
     public struct SpellData 
     {
-        public SpellData(uint? FireSpellUses,uint? IceSpellUses, uint? ThunderSpellUses) 
+        public SpellData(string selectedSpell, uint? selectedSpellUses, Color spellColor)
         { 
-            this.FireSpellUses = FireSpellUses;
-            this.IceSpellUses = IceSpellUses;
-            this.ThunderSpellUses = ThunderSpellUses;
+            SelectedSpell = selectedSpell;
+            SelectedSpellUses = selectedSpellUses;
+            SpellColor = spellColor;
         }
-        public uint? FireSpellUses;
-        public uint? IceSpellUses;
-        public uint? ThunderSpellUses;
-
+        public string SelectedSpell { get; set; }
+        public uint? SelectedSpellUses { get; set; }
+        public Color SpellColor { get; set; }
     }
     public void Attack()
     {
@@ -66,6 +65,7 @@ public class Staff : MonoBehaviour
             {
                 attack.RemainingUseCount = attack.Spell.UseCount;
             }
+            OnStaffSpellChange.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor));
         }
     }
 
@@ -78,7 +78,7 @@ public class Staff : MonoBehaviour
 
         if (SpellSlots.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;
         m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + SpellSlots.Count) % SpellSlots.Count;
-        OnStaffSpellChange.Invoke(new SpellData(1,1,1));
+        OnStaffSpellChange.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor));
         if (SpellSlots[m_attackIndex].Spell)
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
 

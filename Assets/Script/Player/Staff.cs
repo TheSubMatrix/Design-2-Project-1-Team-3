@@ -60,7 +60,6 @@ public class Staff : MonoBehaviour
         if (SpellSlots[m_attackIndex].Spell)
         {
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
-            OnStaffSpellChange?.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
         }
         foreach (SpellSlot attack in SpellSlots)
         {
@@ -79,6 +78,7 @@ public class Staff : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Attack();
+            OnStaffSpellChange?.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
         }
 
         if (SpellSlots.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;

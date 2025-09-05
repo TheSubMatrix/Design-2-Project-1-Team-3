@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FireBar : MonoBehaviour
 {
+    [SerializeField] uint m_attackDamage;
     private float fanSpeed = 75f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,9 +17,8 @@ public class FireBar : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            //player takes damage
-        }
+        other.gameObject.GetComponent<IDamageable>()?.Damage(m_attackDamage);
+        Debug.Log(other.gameObject.GetComponent<IDamageable>());
+
     }
 }

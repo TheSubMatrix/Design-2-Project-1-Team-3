@@ -24,7 +24,7 @@ public class VisionSensor : MonoBehaviour
             m_sightSphere = setCollider;
             EditorUtility.SetDirty(this);
         };
-        if(m_sightSphere is null) return;
+        if(m_sightSphere == null) return;
         m_sightSphere.radius = m_sightRadius;
         m_sightSphere.isTrigger = true;
         m_sightSphere.includeLayers = m_layerMask;

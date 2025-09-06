@@ -29,7 +29,7 @@ public class ThunderSpell : StaffSpellSO
         {
             thunderSpellVFX.PlayVFX(new []{ new ThunderSpellVFX.BoltPosition(hit.point, attackingObject.transform.position)});
         }
-        IDamageable damageable = hit.collider.gameObject.GetComponent<IDamageable>();
-        damageable?.Damage(10);
+        IShockable damageable = hit.collider.gameObject.GetComponent<IShockable>();
+        damageable?.Shock(10);
     }
 }

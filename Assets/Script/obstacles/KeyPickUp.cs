@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class SpellsUI : MonoBehaviour
+public class DoorAndKey : MonoBehaviour
 {
+    public int key = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,16 +14,12 @@ public class SpellsUI : MonoBehaviour
     {
         
     }
-    public void UpdateSpellUI (Staff.SpellData  SpellsRemaining)
+    public void OnTriggerEnter(Collider other)
     {
-        //Fire
-
-
-        //Thunder
-
-
-        //Ice
-
-
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            key += 1;
+        }
     }
 }

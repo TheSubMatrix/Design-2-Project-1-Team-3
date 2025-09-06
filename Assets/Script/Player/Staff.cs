@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class Staff : MonoBehaviour
 {
     [SerializeField]
-    UnityEvent <SpellData> OnStaffSpellChange = new UnityEvent<SpellData>();
+    UnityEvent <SpellData> OnStaffSpellChange = new();
     [FormerlySerializedAs("m_projectileFirePoint")] [SerializeField] Transform m_firePoint;
     [SerializeField] Renderer m_staffBallRenderer;
     [field: FormerlySerializedAs("<Attacks>k__BackingField")] [field:SerializeField] public List<SpellSlot> SpellSlots{ get; set;}
@@ -27,16 +27,17 @@ public class Staff : MonoBehaviour
     int m_attackIndex;
     public struct SpellData 
     {
-        public SpellData(uint? FireSpellUses,uint? IceSpellUses, uint? ThunderSpellUses) 
+        public SpellData(string selectedSpell, uint? selectedSpellUses, Color spellColor, Sprite spellSprite)
         { 
-            this.FireSpellUses = FireSpellUses;
-            this.IceSpellUses = IceSpellUses;
-            this.ThunderSpellUses = ThunderSpellUses;
+            SelectedSpell = selectedSpell;
+            SelectedSpellUses = selectedSpellUses;
+            SpellColor = spellColor;
+            SpellSprite = spellSprite;
         }
-        public uint? FireSpellUses;
-        public uint? IceSpellUses;
-        public uint? ThunderSpellUses;
-
+        public string SelectedSpell { get; set; }
+        public uint? SelectedSpellUses { get; set; }
+        public Color SpellColor { get; set; }
+        public Sprite SpellSprite { get; set; }
     }
     public void Attack()
     {
@@ -56,8 +57,10 @@ public class Staff : MonoBehaviour
 
     void Awake()
     {
-        if(SpellSlots[m_attackIndex].Spell)
+        if (SpellSlots[m_attackIndex].Spell)
+        {
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
+        }
         foreach (SpellSlot attack in SpellSlots)
         {
             attack.Spell?.Initialize();
@@ -67,6 +70,7 @@ public class Staff : MonoBehaviour
                 attack.RemainingUseCount = attack.Spell.UseCount;
             }
         }
+        OnStaffSpellChange?.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
     }
 
     void Update()
@@ -74,11 +78,12 @@ public class Staff : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Attack();
+            OnStaffSpellChange?.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
         }
 
         if (SpellSlots.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;
         m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + SpellSlots.Count) % SpellSlots.Count;
-        OnStaffSpellChange.Invoke(new SpellData(1,1,1));
+        OnStaffSpellChange?.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
         if (SpellSlots[m_attackIndex].Spell)
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
 

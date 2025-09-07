@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlatformUpDown : MonoBehaviour
 {
-    public float speed = 7f; // Speed of the movement
+    public float speed = 2f; // Speed of the movement
     public float height = 5f; // Height of the movement
 
     private Vector3 startPosition;

@@ -23,7 +23,6 @@ public class EnemyMovementSpeedBehaviorModifier : MonoBehaviour, ISlowable
     public void Slow(float slowPercent, float duration)
     {
         if (m_slowCoroutine != null) { StopCoroutine(m_slowCoroutine); }
-        Debug.Log("Slowed");
         m_speedVariable.Value = m_defaultSpeed;
         m_navMeshAgent.speed = m_defaultSpeed;
         m_slowCoroutine = StartCoroutine(SlowForTimeAsync(slowPercent, duration));

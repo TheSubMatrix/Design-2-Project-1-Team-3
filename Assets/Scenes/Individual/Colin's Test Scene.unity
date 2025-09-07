@@ -252,6 +252,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1820044253085880671, guid: d2d1f74f3175b3f489d3ce4cdc71fbb2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2682658761822813155, guid: d2d1f74f3175b3f489d3ce4cdc71fbb2, type: 3}
       propertyPath: 'managedReferences[5115891441458479183]'
       value: 'Unity.Behavior Unity.Behavior.BlackboardVariable`1[[UnityEngine.Animator,
@@ -736,6 +740,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 522af57809821554697bcb2ffa89a054, type: 3}
       propertyPath: m_Name
       value: Enemy 3 Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 522af57809821554697bcb2ffa89a054, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 522af57809821554697bcb2ffa89a054, type: 3}
       propertyPath: m_Avatar

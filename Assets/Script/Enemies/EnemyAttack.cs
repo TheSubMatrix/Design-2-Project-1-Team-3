@@ -15,6 +15,12 @@ public class EnemyAttack : MonoBehaviour
         m_attackCollider.isTrigger = true;
     }
 
+    public void OnDeath()
+    {
+        StopCoroutine(AttackRoutineAsync());
+        m_attackCollider.enabled = false;
+        m_isAttacking = false;
+    }
     public void Attack()
     {
         if(m_isAttacking) return;

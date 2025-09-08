@@ -4,7 +4,7 @@ public class UIButtonController : MonoBehaviour
 {
     public void OnPlayButtonPressed()
     {
-        SceneTransitionManager.Instance.TransitionToScene("Level 1");
+        SceneTransitionManager.Instance.TransitionToScene("Pre Game Dialogue");
     }
     public void OnQuitButtonPressed()
     {

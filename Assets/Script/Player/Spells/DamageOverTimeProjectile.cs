@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Linq;
+using AudioSystem;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Pool;
+
 [RequireComponent(typeof(Rigidbody))]
 public class DamageOverTimeProjectile : Projectile
 {
+    [SerializeField] SoundData m_impactSound;
     [SerializeField] protected float m_duration = 10;
-    delegate void DamageDelegate(uint damage);
     protected override void OnCollisionEnter(Collision collision)
     {
         foreach (ContactPoint contact in collision.contacts)
@@ -15,9 +13,9 @@ public class DamageOverTimeProjectile : Projectile
             IFlammable flammable = contact.otherCollider.gameObject.GetComponent<IFlammable>();
             flammable?.OnSetFire(m_duration, Damage);
         }
+        SoundManager.Instance.CreateSound().WithSoundData(m_impactSound).WithPosition(transform.position).WithRandomPitch().Play();
         if (!gameObject.activeSelf) return;
         Pool?.Release(this);
-        
     }
     
 }

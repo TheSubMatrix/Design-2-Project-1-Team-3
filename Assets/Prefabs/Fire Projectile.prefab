@@ -252,6 +252,24 @@ MonoBehaviour:
   <OnReleaseEvent>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  m_impactSound:
+    Clip: {fileID: 8300000, guid: 0158158d7d0f56642880a748b7d0a513, type: 3}
+    MixerGroup: {fileID: -8113704343797999582, guid: fc4fa691de3ec5542b809c3c7d5651aa, type: 2}
+    Loop: 0
+    PlayOnAwake: 1
+    PlayedFrequently: 0
+    Volume: 1
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    RolloffMode: 0
   m_duration: 2
 --- !u!96 &1496756438564586940
 TrailRenderer:

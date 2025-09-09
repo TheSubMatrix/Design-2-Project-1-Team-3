@@ -17,13 +17,18 @@ public class Door : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && keyPickUp.key >= 1)
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player") && keyPickUp.key >= 1)
         {
             Destroy(gameObject);
         }
-        else if (other.gameObject.CompareTag("Player") && keyPickUp.key < 1)
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Player") && keyPickUp.key < 1)
         {
             Debug.Log("no  key");
+        }
+
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            Debug.Log("player has a layer");
         }
         else 
         {

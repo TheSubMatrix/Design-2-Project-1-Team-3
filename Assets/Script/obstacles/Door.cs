@@ -13,7 +13,8 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        int value = keyPickUp.key;
+        //Debug.Log("Value from key: " + value);
     }
     public void OnTriggerEnter(Collider other)
     {

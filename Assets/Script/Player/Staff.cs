@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class Staff : MonoBehaviour
 {
     [SerializeField]
-    UnityEvent <SpellData> OnStaffSpellChange = new();
+    public UnityEvent <SpellData> OnStaffSpellChange = new();
     [FormerlySerializedAs("m_projectileFirePoint")] [SerializeField] Transform m_firePoint;
     [SerializeField] Renderer m_staffBallRenderer;
     [field: FormerlySerializedAs("<Attacks>k__BackingField")] [field:SerializeField] public List<SpellSlot> SpellSlots{ get; set;}
@@ -70,7 +70,7 @@ public class Staff : MonoBehaviour
                 attack.RemainingUseCount = attack.Spell.UseCount;
             }
         }
-        OnStaffSpellChange?.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
+        OnStaffSpellChange?.Invoke(GetSpellDataForCurrentSlot());
     }
 
     void Update()
@@ -78,14 +78,21 @@ public class Staff : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Attack();
-            OnStaffSpellChange?.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
+            OnStaffSpellChange?.Invoke(GetSpellDataForCurrentSlot());
         }
 
         if (SpellSlots.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;
         m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + SpellSlots.Count) % SpellSlots.Count;
-        OnStaffSpellChange?.Invoke(new SpellData(SpellSlots[m_attackIndex].Spell.SpellName, SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor, SpellSlots[m_attackIndex].Spell.SpellSprite));
+        OnStaffSpellChange?.Invoke(GetSpellDataForCurrentSlot());
         if (SpellSlots[m_attackIndex].Spell)
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
 
+    }
+
+    public SpellData GetSpellDataForCurrentSlot()
+    {
+        return new SpellData(SpellSlots[m_attackIndex].Spell.SpellName,
+            SpellSlots[m_attackIndex].RemainingUseCount, SpellSlots[m_attackIndex].Spell.SpellBallColor,
+            SpellSlots[m_attackIndex].Spell.SpellSprite);
     }
 }

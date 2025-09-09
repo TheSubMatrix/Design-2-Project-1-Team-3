@@ -23,6 +23,7 @@ public class NewWeaponItem : MonoBehaviour
         if (matchingSlots.Length <= 0)
         {
             staff.SpellSlots.Add(new Staff.SpellSlot(m_staffSpellToGive));
+            staff.OnStaffSpellChange.Invoke(staff.GetSpellDataForCurrentSlot());
             Destroy(gameObject);
         }
         else
@@ -31,6 +32,7 @@ public class NewWeaponItem : MonoBehaviour
             {
                 if (!(slot.RemainingUseCount < slot.Spell.UseCount)) continue;
                 slot.RemainingUseCount = slot.Spell.UseCount;
+                staff.OnStaffSpellChange.Invoke(staff.GetSpellDataForCurrentSlot());
                 Destroy(gameObject);
                 return;
             }

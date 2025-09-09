@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 1905668978849689048}
   - component: {fileID: 6313435518859022487}
   - component: {fileID: 3953261024105429027}
+  - component: {fileID: 1208338227277640279}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -225,6 +226,18 @@ MonoBehaviour:
   OnDeathEvent:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1208338227277640279}
+        m_TargetAssemblyTypeName: EnemyDeathHandler, Enemies
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 3953261024105429027}
         m_TargetAssemblyTypeName: EnemyRandomItemDrops, Enemies
         m_MethodName: OnEnemyDeath
@@ -237,9 +250,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1820044253085880671}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 7686914397643409885}
+        m_TargetAssemblyTypeName: EnemyAttack, Enemies
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8511491906941671251}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -314,6 +339,20 @@ MonoBehaviour:
   - {fileID: 199885897142695011, guid: 74e5966a2af9fd44eb529686c5089f33, type: 3}
   - {fileID: 5570084544881394721, guid: 33bcccce5f17fb54a8f9c3cbcf5dc4d7, type: 3}
   - {fileID: 4521666829066433665, guid: eacae6c27f6334340ac9d4295deaf492, type: 3}
+--- !u!114 &1208338227277640279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820044253085880671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0704a54969dcb27478dd8d5045866258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_agent: {fileID: 2682658761822813155}
+  m_animator: {fileID: 1498343141370168919}
 --- !u!1 &4355507127448345059
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +481,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9435765ba49e92a40ae5e495f981b653, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1498343141370168919}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9435765ba49e92a40ae5e495f981b653, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6102251894262934958}
   m_SourcePrefab: {fileID: 100100000, guid: 9435765ba49e92a40ae5e495f981b653, type: 3}
 --- !u!4 &462168971040211470 stripped
 Transform:
@@ -475,3 +517,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6102251894262934958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946359105272879284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0704a54969dcb27478dd8d5045866258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_agent: {fileID: 0}
+  m_animator: {fileID: 0}

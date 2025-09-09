@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Compresser : MonoBehaviour
 {
+    [SerializeField] uint m_attackDamage;
     public float speed = 10f; // Speed of the movement
     public float height = 10f; // Height of the movement
 
@@ -20,5 +21,9 @@ public class Compresser : MonoBehaviour
 
         // Update the object's position
         transform.position = new Vector3(startPosition.x, newY, startPosition.z);
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.GetComponent<IDamageable>()?.Damage(m_attackDamage);
     }
 }

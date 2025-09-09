@@ -4,7 +4,7 @@ public class BreakableAnySpell : MonoBehaviour
 {
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Fire") || other.gameObject.CompareTag("Ice") || other.gameObject.CompareTag("Thunder"))
+        if (other.gameObject.CompareTag("Fire") || other.gameObject.CompareTag("Ice") || other.gameObject.CompareTag("Thunder") || other.gameObject.CompareTag("Rock"))
         {
             Destroy(gameObject);
 

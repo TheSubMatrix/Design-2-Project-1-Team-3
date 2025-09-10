@@ -552,8 +552,10 @@ MonoBehaviour:
     space bar can make the player jump and using Ctrl to make the player duck.
 
     As
-    a wizard you have 3 spells Rock, Fire and Ice using left click to fire you spell
-    and use middle mouse scroll to switch your weapon spell.'
+    a wizard you have 3 limited spells thunder, Fire and Ice and 1 unlimted spell
+    rock. Using left click to fire your spells and use middle mouse scroll to switch
+    your weapon spell. Sometimes when the enemy is killed they might drop a healing
+    potion or a spell book that refills your spells.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

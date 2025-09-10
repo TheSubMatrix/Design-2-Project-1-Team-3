@@ -28,7 +28,7 @@ public class UIpauseMenu : MonoBehaviour
                 
                 Time.timeScale = 0f;
                 Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = false;
+                Cursor.visible = true;
                 Paused();
             }
             else

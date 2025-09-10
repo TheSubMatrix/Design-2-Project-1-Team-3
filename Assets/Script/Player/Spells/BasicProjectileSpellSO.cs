@@ -5,6 +5,7 @@ using UnityEngine.Pool;
 [CreateAssetMenu(menuName = "Scriptable Objects/Spells/Basic Projectile Spell", fileName = "New Basic Projectile Spell"), Serializable]
 public class BasicProjectileSpellSO : StaffSpellSO
 {
+    public float m_projectileForce = 10;
     public override Color SpellBallColor => m_spellBallColor;
     [SerializeField][ColorUsage(false, true)] Color m_spellBallColor;
     [SerializeField] GameObject m_projectilePrefab;
@@ -33,6 +34,6 @@ public class BasicProjectileSpellSO : StaffSpellSO
     {
         Projectile projectileFromPool = m_projectilePool.Get();
         projectileFromPool.OnInitialize(position,rotation);
-        projectileFromPool.OnFire(direction * 10);
+        projectileFromPool.OnFire(direction * m_projectileForce);
     }
 }

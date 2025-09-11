@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpinningFan : MonoBehaviour, ISlowable
 {
+    [SerializeField] uint m_attackDamage;
     [SerializeField] float m_fanSpeed = 400f;
     bool m_frozen;
     Coroutine m_slowCoroutine;
@@ -23,5 +24,9 @@ public class SpinningFan : MonoBehaviour, ISlowable
         m_frozen = true;
         yield return new WaitForSeconds(duration);
         m_frozen = false;
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.GetComponent<IDamageable>()?.Damage(m_attackDamage);
     }
 }

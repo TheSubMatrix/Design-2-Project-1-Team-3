@@ -297,8 +297,8 @@ MonoBehaviour:
   m_playerCollider: {fileID: 6931768913703375475}
   m_orientation: {fileID: 7603956523092778386}
   m_rb: {fileID: 6755784610202687113}
-  m_walkMoveSpeed: 4
-  m_sprintMoveSpeed: 8
+  m_walkMoveSpeed: 8
+  m_sprintMoveSpeed: 16
   m_crouchMoveSpeed: 2
   m_maxGroundAcceleration: 15
   m_maxGroundDeceleration: 30

@@ -13301,6 +13301,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100002, guid: 388501e78f41e3b489f7383d9c078c2d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 993613071}
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: 388501e78f41e3b489f7383d9c078c2d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 993613073}
   m_SourcePrefab: {fileID: 100100000, guid: 388501e78f41e3b489f7383d9c078c2d, type: 3}
 --- !u!1001 &399675902
 PrefabInstance:
@@ -26829,6 +26832,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507778470723167801, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: m_walkMoveSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507778470723167801, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
+      propertyPath: m_sprintMoveSpeed
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -30246,6 +30257,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.2999442, y: 4.041135, z: 5.5887465}
   m_Center: {x: 0.64997065, y: 1.5205667, z: -2.2943773}
+--- !u!114 &993613073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993613070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e3b4b84e1e03a4cae75fc6421d6f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &994290963
 GameObject:
   m_ObjectHideFlags: 0

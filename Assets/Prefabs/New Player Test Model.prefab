@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1742867303281926308}
   m_Layer: 3
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1398,7 +1398,7 @@ Transform:
   m_GameObject: {fileID: 7768032033591590426}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.15, z: 0.125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1690,7 +1690,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Magic Staff
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1069854463432142071, guid: 23cb3fcd8a615b142aeb03b8093ae271, type: 3}
+    - {fileID: 7345414793082687726, guid: 23cb3fcd8a615b142aeb03b8093ae271, type: 3}
+    - {fileID: 7234692071984259387, guid: 23cb3fcd8a615b142aeb03b8093ae271, type: 3}
+    - {fileID: 9219978209958312617, guid: 23cb3fcd8a615b142aeb03b8093ae271, type: 3}
+    - {fileID: 9061911803444977459, guid: 23cb3fcd8a615b142aeb03b8093ae271, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6067791447217222633, guid: 23cb3fcd8a615b142aeb03b8093ae271, type: 3}

@@ -1,7 +1,4 @@
 using UnityEngine;
-using System;
-using System.Linq;
-using CustomNamespace.Extensions;
 using UnityEngine.VFX;
 
 public class ThunderSpell : StaffSpell
@@ -26,7 +23,7 @@ public class ThunderSpell : StaffSpell
             StartPosition = startPosition;
         }
     }
-    public void PlayVFX(BoltPosition[] boltPositions)
+    void PlayVFX(BoltPosition[] boltPositions)
     {
         foreach (BoltPosition positions in boltPositions)
         {
@@ -44,7 +41,6 @@ public class ThunderSpell : StaffSpell
         VisualEffect[] thunderSpellVFX = SpellOwner.GetComponentsInChildren<VisualEffect>();
         m_vfxInstance = thunderSpellVFX[0];
         m_boltDataToSend = m_vfxInstance.CreateVFXEventAttribute();
-        Debug.Log(m_boltDataToSend);
     }
 
     public override void ExecuteAttack(Vector3 position, Vector3 direction, Quaternion rotation)

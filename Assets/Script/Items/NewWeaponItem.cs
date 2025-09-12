@@ -17,7 +17,6 @@ public class NewWeaponItem : MonoBehaviour
         {
             return;
         }
-        Debug.Log(staff);
         Staff.SpellSlot[] matchingSlots = staff.SpellSlots
             .Where(slot => slot.Spell.SpellName == m_staffSpellToGive.SpellInstance.SpellName)
             .ToArray();

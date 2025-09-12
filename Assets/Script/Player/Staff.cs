@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using AudioSystem;
+using CustomNamespace.Extensions;
 using UnityEngine.Events;
 
 public class Staff : MonoBehaviour
 {
     [SerializeField]
     public UnityEvent <SpellData> OnStaffSpellChange = new();
-    [FormerlySerializedAs("m_projectileFirePoint")] [SerializeField] Transform m_firePoint;
+    public Transform m_firePoint;
     [SerializeField] Renderer m_staffBallRenderer;
-    [field: FormerlySerializedAs("<Attacks>k__BackingField")] [field:SerializeField] public List<SpellSlot> SpellSlots{ get; set;}
-
+    public List<SpellSlot> SpellSlots { get; set; } = new();
+    [SerializeField] List<SpellSettingsSO> m_spellSettings = new();
     [Serializable]
     public class SpellSlot
     {
-        public SpellSlot(StaffSpellSO spell)
+        public SpellSlot(StaffSpell spell)
         {
             Spell = spell;
             RemainingUseCount = spell.UseCount;
         }
-        public StaffSpellSO Spell;
+        public StaffSpell Spell;
         public uint? RemainingUseCount;
     }
     int m_attackIndex;
@@ -41,7 +42,7 @@ public class Staff : MonoBehaviour
     }
     public void Attack()
     {
-        SpellSlots[m_attackIndex].Spell?.ExecuteAttack(m_firePoint.gameObject, m_firePoint.position, transform.forward, m_firePoint.rotation);
+        SpellSlots[m_attackIndex].Spell?.ExecuteAttack(m_firePoint.position, transform.forward, m_firePoint.rotation);
         SoundManager.Instance.CreateSound().WithSoundData(SpellSlots[m_attackIndex].Spell?.CastSound).WithPosition(transform.position).WithRandomPitch().Play();
         if (SpellSlots[m_attackIndex].RemainingUseCount is not > 0) return;
         SpellSlots[m_attackIndex].RemainingUseCount--;
@@ -51,19 +52,24 @@ public class Staff : MonoBehaviour
         {
             m_attackIndex = SpellSlots.Count - 1;
         }
-        if(SpellSlots[m_attackIndex].Spell)
+        if(SpellSlots[m_attackIndex].Spell is not null)
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
     }
 
     void Awake()
     {
-        if (SpellSlots[m_attackIndex].Spell)
+        foreach (SpellSettingsSO spellSettings in m_spellSettings)
+        {
+            StaffSpell spell = spellSettings.SpellInstance.CopyWithAllValues();
+            SpellSlots.Add(new SpellSlot(spell));
+        }
+        if (SpellSlots[m_attackIndex].Spell is not null)
         {
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
         }
         foreach (SpellSlot attack in SpellSlots)
         {
-            attack.Spell?.Initialize();
+            attack.Spell?.Initialize(this);
             // Ensure per-staff remaining uses are initialized because Unity doesn't run the ctor
             if (attack.RemainingUseCount is null && attack.Spell != null)
             {
@@ -84,7 +90,7 @@ public class Staff : MonoBehaviour
         if (SpellSlots.Count <= 0 || Input.GetAxis("Mouse ScrollWheel") == 0f) return;
         m_attackIndex = (m_attackIndex + (Input.GetAxis("Mouse ScrollWheel") > 0f ? 1 : -1) + SpellSlots.Count) % SpellSlots.Count;
         OnStaffSpellChange?.Invoke(GetSpellDataForCurrentSlot());
-        if (SpellSlots[m_attackIndex].Spell)
+        if (SpellSlots[m_attackIndex].Spell is not null)
             m_staffBallRenderer.material.color = SpellSlots[m_attackIndex].Spell.SpellBallColor;
 
     }

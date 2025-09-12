@@ -8,7 +8,7 @@ public class NewWeaponItem : MonoBehaviour
     [SerializeField] float m_rotationSpeed = 100;
     [SerializeField] float m_bobbingSpeed = 1;
     [SerializeField] float m_bobbingAmount = 0.25f;
-    [SerializeField]StaffSpellSO m_staffSpellToGive;
+    [SerializeField]StaffSpell m_staffSpellToGive;
     void OnTriggerEnter(Collider other)
     {
         Staff staff = other.gameObject.GetComponentInChildren<CameraControl>()?.m_cam.GetComponentInChildren<Staff>();

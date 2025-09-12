@@ -267,10 +267,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a28dbe1ae8167aa41956b10de6c56d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStaffSpellChange:
+    m_PersistentCalls:
+      m_Calls: []
   m_firePoint: {fileID: 7532888062582804793}
   m_staffBallRenderer: {fileID: 6712469306177765645}
-  <SpellSlots>k__BackingField:
-  - Spell: {fileID: 11400000, guid: 3beb904bd0f0cd3419bc8284f8147977, type: 2}
-  - Spell: {fileID: 11400000, guid: 11addf7dfdfc07b419ac852a2248d86f, type: 2}
-  - Spell: {fileID: 11400000, guid: 0c244718d77f7244b865189ffc20fb62, type: 2}
-  - Spell: {fileID: 11400000, guid: ebfaf51648658bd4081980d1e283fa84, type: 2}
+  m_spellSettings:
+  - {fileID: 11400000, guid: cab072bbcac6a43478e918a60ce2abd5, type: 2}
+  - {fileID: 11400000, guid: e2561753da9598642bd8e1db39910703, type: 2}
+  - {fileID: 11400000, guid: 2f318c570d2e0b34f87171e216bbd1b8, type: 2}
+  - {fileID: 11400000, guid: ebfaf51648658bd4081980d1e283fa84, type: 2}

@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using CustomNamespace.Extensions;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -8,7 +9,7 @@ public class NewWeaponItem : MonoBehaviour
     [SerializeField] float m_rotationSpeed = 100;
     [SerializeField] float m_bobbingSpeed = 1;
     [SerializeField] float m_bobbingAmount = 0.25f;
-    [SerializeField]StaffSpell m_staffSpellToGive;
+    [SerializeField]SpellSettingsSO m_staffSpellToGive;
     void OnTriggerEnter(Collider other)
     {
         Staff staff = other.gameObject.GetComponentInChildren<CameraControl>()?.m_cam.GetComponentInChildren<Staff>();
@@ -16,13 +17,14 @@ public class NewWeaponItem : MonoBehaviour
         {
             return;
         }
+        Debug.Log(staff);
         Staff.SpellSlot[] matchingSlots = staff.SpellSlots
-            .Where(slot => slot.Spell == m_staffSpellToGive)
+            .Where(slot => slot.Spell.SpellName == m_staffSpellToGive.SpellInstance.SpellName)
             .ToArray();
 
         if (matchingSlots.Length <= 0)
         {
-            staff.SpellSlots.Add(new Staff.SpellSlot(m_staffSpellToGive));
+            staff.SpellSlots.Add(new Staff.SpellSlot(m_staffSpellToGive.SpellInstance.CopyWithAllValues()));
             staff.OnStaffSpellChange.Invoke(staff.GetSpellDataForCurrentSlot());
             Destroy(gameObject);
         }

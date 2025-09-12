@@ -46,5 +46,5 @@ MonoBehaviour:
           m_Bits: 4294967295
         m_spellEffect: {fileID: 8926484042661614526, guid: 54e9545c2ef02f840b8dbc3fa993f2e6, type: 3}
         m_spellBallColor: {r: 1.7886791, g: 1.6020015, b: 0.45560676, a: 0}
-        m_hasLimitedUses: 0
-        m_maxUses: 0
+        m_hasLimitedUses: 1
+        m_maxUses: 3

@@ -9,7 +9,7 @@ public abstract class StaffSpell : IEquatable<StaffSpell>
     public string SpellName;
     public SoundData CastSound;
     public Sprite SpellSprite;
-    public Staff SpellOwner;
+    [HideInInspector] public Staff SpellOwner;
 
     public virtual void Initialize(Staff owner)
     {

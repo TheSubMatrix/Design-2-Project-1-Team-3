@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03a7c9b3bc29b974497d3980d17a73e7, type: 3}
-  m_Name: Thunder Spell
+  m_Name: Ice Spell
   m_EditorClassIdentifier: 
   SpellInstance:
-    rid: 5115891552486424693
+    rid: 5115891552486424689
   references:
     version: 2
     RefIds:
-    - rid: 5115891552486424693
-      type: {class: ThunderSpell, ns: , asm: Player}
+    - rid: 5115891552486424689
+      type: {class: BasicProjectileSpell, ns: , asm: Player}
       data:
-        SpellName: Thunder Spell
+        SpellName: Ice Spell
         CastSound:
-          Clip: {fileID: 8300000, guid: ad32c71b420f68a409486e80bce48c07, type: 3}
-          MixerGroup: {fileID: 0}
+          Clip: {fileID: 8300000, guid: b5c66252358916c4bb650aa7e147b9ed, type: 3}
+          MixerGroup: {fileID: -8113704343797999582, guid: fc4fa691de3ec5542b809c3c7d5651aa, type: 2}
           Loop: 0
-          PlayOnAwake: 0
+          PlayOnAwake: 1
           PlayedFrequently: 0
           Volume: 1
           Pitch: 1
@@ -39,12 +39,9 @@ MonoBehaviour:
           IgnoreListenerVolume: 0
           IgnoreListenerPause: 0
           RolloffMode: 0
-        SpellSprite: {fileID: 21300000, guid: 74cb7f2d263974549b160073e5d24231, type: 3}
-        SpellOwner: {fileID: 0}
-        m_layerMask:
-          serializedVersion: 2
-          m_Bits: 4294967295
-        m_spellEffect: {fileID: 8926484042661614526, guid: 54e9545c2ef02f840b8dbc3fa993f2e6, type: 3}
-        m_spellBallColor: {r: 1.7886791, g: 1.6020015, b: 0.45560676, a: 0}
+        SpellSprite: {fileID: 21300000, guid: 272d5d551d011e14ab07a4987e6f0f41, type: 3}
+        m_projectileForce: 10
+        m_spellBallColor: {r: 0.58793586, g: 1.3759954, b: 2.063616, a: 0}
+        m_projectilePrefab: {fileID: 7629056565955650697, guid: 51dc92794f0d3cb4da4314d457f0a7be, type: 3}
         m_hasLimitedUses: 1
-        m_maxUses: 3
+        m_maxUses: 10

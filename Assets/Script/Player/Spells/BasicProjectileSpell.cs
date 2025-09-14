@@ -1,21 +1,23 @@
 using System;
 using UnityEngine;
 using UnityEngine.Pool;
+using Object = UnityEngine.Object;
 
-[CreateAssetMenu(menuName = "Scriptable Objects/Spells/Basic Projectile Spell", fileName = "New Basic Projectile Spell"), Serializable]
-public class BasicProjectileSpellSO : StaffSpellSO
+[Serializable]
+public class BasicProjectileSpell : StaffSpell
 {
-    public float m_projectileForce = 10;
+    [SerializeField] float m_projectileForce = 10;
     public override Color SpellBallColor => m_spellBallColor;
     [SerializeField][ColorUsage(false, true)] Color m_spellBallColor;
     [SerializeField] GameObject m_projectilePrefab;
     ObjectPool<Projectile> m_projectilePool;
     [SerializeField] bool m_hasLimitedUses;
-    [OnSelectionRender(nameof(m_hasLimitedUses),true), SerializeField]
+    [SerializeField]
     uint m_maxUses;
     public override uint? UseCount => m_hasLimitedUses ? m_maxUses : null;
-    public override void Initialize()
+    public override void Initialize(Staff owner)
     {
+        base.Initialize(owner);
         if (m_projectilePrefab?.GetComponent<Projectile>() is null)
         {
             Debug.LogError("Projectile prefab must have a Projectile component");
@@ -26,11 +28,11 @@ public class BasicProjectileSpellSO : StaffSpellSO
             () => Projectile.OnSpawn(m_projectilePrefab),
             projectile => projectile.OnPull(m_projectilePool),
             projectile => projectile.OnRelease(),
-            projectile => Destroy(projectile.gameObject)
+            projectile => Object.Destroy(projectile.gameObject)
         );
         
     }
-    public override void ExecuteAttack(GameObject attackingObject, Vector3 position,Vector3 direction, Quaternion rotation)
+    public override void ExecuteAttack(Vector3 position,Vector3 direction, Quaternion rotation)
     {
         Projectile projectileFromPool = m_projectilePool.Get();
         projectileFromPool.OnInitialize(position,rotation);

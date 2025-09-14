@@ -19,4 +19,5 @@ public class HealthBar : MonoBehaviour
         m_currentHealth = newHealth;
         m_healthBar.fillAmount = newHealth / (float)m_maxHealth;
     }
+    
 }

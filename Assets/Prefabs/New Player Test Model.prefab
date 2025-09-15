@@ -1690,6 +1690,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Magic Staff
       objectReference: {fileID: 0}
+    - target: {fileID: 7039312416458090907, guid: 23cb3fcd8a615b142aeb03b8093ae271, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 18f96cd0b7113f942bc0d421eaa81466, type: 2}
     m_RemovedComponents:
     - {fileID: 1069854463432142071, guid: 23cb3fcd8a615b142aeb03b8093ae271, type: 3}
     - {fileID: 7345414793082687726, guid: 23cb3fcd8a615b142aeb03b8093ae271, type: 3}

@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Chalkboard Decal 1
   m_Shader: {fileID: -6465566751694194690, guid: 9b4e681081e2b4c469111bb649e2f7ee, type: 3}
-  m_Parent: {fileID: 2100000, guid: 1aa4925b5aab1fb4c8d9bbe9439d4843, type: 2}
+  m_Parent: {fileID: 2100000, guid: 5e768a5e10e3a7046b93328e459785cf, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []

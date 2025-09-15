@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class HealthPickup : MonoBehaviour
+public class HealthPickup : BasePickup
 {
     [SerializeField] float m_rotationSpeed = 100;
     [SerializeField] float m_bobbingSpeed = 1;

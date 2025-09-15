@@ -216,7 +216,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.439774, y: -7.561, z: 8.456427}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4212197175977338355}
@@ -236,10 +236,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf35731bb7ec9d42aefcb712fa02016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPickup:
+    m_PersistentCalls:
+      m_Calls: []
   m_rotationSpeed: 100
   m_bobbingSpeed: 1
-  m_bobbingAmount: 0.25
-  m_healAmount: 10
+  m_bobbingAmount: 0.125
+  m_healAmount: 30
 --- !u!65 &7752410549410879775
 BoxCollider:
   m_ObjectHideFlags: 0

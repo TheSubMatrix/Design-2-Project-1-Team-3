@@ -4,7 +4,7 @@ using CustomNamespace.Extensions;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class NewWeaponItem : MonoBehaviour
+public class NewWeaponItem : BasePickup
 {
     [SerializeField] float m_rotationSpeed = 100;
     [SerializeField] float m_bobbingSpeed = 1;

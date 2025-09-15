@@ -244,7 +244,7 @@ MonoBehaviour:
   - rid: 3789101202827903245
   - rid: 3789101202827903281
   - rid: 3789101248851476634
-  - rid: 3789101257170879173
+  - rid: 7426387748683252147
   - rid: 5115891441458479183
   m_IsInitialised: 0
   m_IsStarted: 0
@@ -275,14 +275,6 @@ MonoBehaviour:
           m_Value1: 15251171708831702885
         Name: Speed
         m_Value: 3
-    - rid: 3789101257170879173
-      type: {class: 'BlackboardVariable`1[[EnemyAttack, Enemies]]', ns: Unity.Behavior, asm: Unity.Behavior}
-      data:
-        GUID:
-          m_Value0: 1910594749207072065
-          m_Value1: 5924915727134925438
-        Name: Enemy Attack
-        m_Value: {fileID: 7686914397643409885}
     - rid: 5115891441458479183
       type: {class: 'BlackboardVariable`1[[UnityEngine.Animator, UnityEngine.AnimationModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
       data:
@@ -291,6 +283,14 @@ MonoBehaviour:
           m_Value1: 17820243267000983680
         Name: Enemy Animator
         m_Value: {fileID: 1498343141370168919}
+    - rid: 7426387748683252147
+      type: {class: 'BlackboardVariable`1[[EnemyAttack, Enemies]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 8594784980509727943
+          m_Value1: 8078353948421779491
+        Name: Enemy Attack
+        m_Value: {fileID: 7686914397643409885}
 --- !u!114 &4156884670443095231
 MonoBehaviour:
   m_ObjectHideFlags: 0

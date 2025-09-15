@@ -42,7 +42,7 @@ public class Staff : MonoBehaviour
     }
     public void Attack()
     {
-        SpellSlots[m_attackIndex].Spell?.ExecuteAttack(m_firePoint.position, transform.forward, m_firePoint.rotation);
+        SpellSlots[m_attackIndex].Spell?.ExecuteAttack(m_firePoint.position, m_firePoint.forward, m_firePoint.rotation);
         SoundManager.Instance.CreateSound().WithSoundData(SpellSlots[m_attackIndex].Spell?.CastSound).WithPosition(transform.position).WithRandomPitch().Play();
         if (SpellSlots[m_attackIndex].RemainingUseCount is not > 0) return;
         SpellSlots[m_attackIndex].RemainingUseCount--;

@@ -6,7 +6,8 @@ public class TrappedFloorLvl1 : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            transform.Rotate(0, 0, 90);
         }
     }
 }

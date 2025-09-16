@@ -9,10 +9,11 @@ public abstract class BasePickup : MonoBehaviour
 	[SerializeField] protected float m_bobbingAmount = 0.25f;
 	[SerializeField] protected SoundData m_pickupSound;
 	public UnityEvent OnPickup;
-	protected virtual void OnDestroy()
+	protected virtual void OnDisable()
 	{
+		if (this.IsBeingUnloaded()) return;
+		SoundManager.Instance?.CreateSound()?.WithSoundData(m_pickupSound).WithPosition(transform.position).WithRandomPitch().Play();
 		OnPickup.Invoke();
-		SoundManager.Instance.CreateSound().WithSoundData(m_pickupSound).WithPosition(transform.position).WithRandomPitch().Play();
 	}
 	protected virtual void Update()
 	{

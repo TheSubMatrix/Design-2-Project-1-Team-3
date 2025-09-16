@@ -65,8 +65,8 @@ Material:
     - _Voronoi_Angle_Offset: 0.5
     - _Voronoi_Scale: 20
     m_Colors:
-    - _Fresnel_Color: {r: 1.7207954, g: 0.14480938, b: 0, a: 0}
-    - _Lava_Color: {r: 766.99603, g: 171.00761, b: 18.089527, a: 0}
+    - _Fresnel_Color: {r: 3.4415908, g: 0.18366855, b: 0, a: 0}
+    - _Lava_Color: {r: 95.874504, g: 21.375952, b: 2.261191, a: 0}
     - _Lava_Normal_Speed: {r: 0, g: 0.03, b: 0, a: 0}
     - _Lava_Remap: {r: -0.07, g: 1.9, b: 0, a: 0}
     - _Lava_Scale: {r: 1.5, g: 1.5, b: 0, a: 0}

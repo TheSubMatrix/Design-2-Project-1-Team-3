@@ -1,3 +1,4 @@
+using AudioSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,10 +7,12 @@ public abstract class BasePickup : MonoBehaviour
 	[SerializeField] protected float m_rotationSpeed = 100;
 	[SerializeField] protected float m_bobbingSpeed = 1;
 	[SerializeField] protected float m_bobbingAmount = 0.25f;
+	[SerializeField] protected SoundData m_pickupSound;
 	public UnityEvent OnPickup;
 	protected virtual void OnDestroy()
 	{
 		OnPickup.Invoke();
+		SoundManager.Instance.CreateSound().WithSoundData(m_pickupSound).WithPosition(transform.position).WithRandomPitch().Play();
 	}
 	protected virtual void Update()
 	{

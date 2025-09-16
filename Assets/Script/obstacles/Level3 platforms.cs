@@ -22,7 +22,7 @@ public class Level3platforms : MonoBehaviour
 
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2f, 4f));
+            yield return new WaitForSeconds(Random.Range(2f, 3f));
 
             //spawning
             spawnPosition.x = Random.Range(-109.5f, -109.51f);
@@ -30,7 +30,7 @@ public class Level3platforms : MonoBehaviour
             spawnPosition.z = Random.Range(34.8f, 34.81f);
             GameObject platform1 = Instantiate(_platform1, spawnPosition, Quaternion.identity);
             platform1.GetComponent<Rigidbody>().AddForce(ImpulseVectorRL, ForceMode.Impulse);
-            Destroy(platform1, 7);
+            Destroy(platform1, 7.5f);
 
         }
     }
@@ -49,7 +49,7 @@ public class Level3platforms : MonoBehaviour
             spawnPosition1.z = Random.Range(-36.5f, -36.51f);
             GameObject platform2 = Instantiate(_platform2, spawnPosition1, Quaternion.identity);
             platform2.GetComponent<Rigidbody>().AddForce(ImpulseVectorLR, ForceMode.Impulse);
-            Destroy(platform2, 7);
+            Destroy(platform2, 7.5f);
 
         }
     }
@@ -60,7 +60,7 @@ public class Level3platforms : MonoBehaviour
 
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2f, 4f));
+            yield return new WaitForSeconds(Random.Range(2f, 3f));
 
             //spawning
             spawnPosition2.x = Random.Range(-143.9f, -143.91f);
@@ -68,7 +68,7 @@ public class Level3platforms : MonoBehaviour
             spawnPosition2.z = Random.Range(35.1f, 35.11f);
             GameObject platform3 = Instantiate(_platform3, spawnPosition2, Quaternion.identity);
             platform3.GetComponent<Rigidbody>().AddForce(ImpulseVectorRL, ForceMode.Impulse);
-            Destroy(platform3, 7f);
+            Destroy(platform3, 7.5f);
 
         }
     }
@@ -89,7 +89,7 @@ public class Level3platforms : MonoBehaviour
             spawnPosition3.z = Random.Range(-35.97f, -35.98f);
             GameObject platform4 = Instantiate(_platform4, spawnPosition3, Quaternion.identity);
             platform4.GetComponent<Rigidbody>().AddForce(ImpulseVectorLR, ForceMode.Impulse);
-            Destroy(platform4, 7f);
+            Destroy(platform4, 7.5f);
 
         }
     }
@@ -100,7 +100,7 @@ public class Level3platforms : MonoBehaviour
 
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(2f, 4f));
+            yield return new WaitForSeconds(Random.Range(2f, 3f));
 
             //spawning
             spawnPosition4.x = Random.Range(-185f, -185.1f);
@@ -108,7 +108,7 @@ public class Level3platforms : MonoBehaviour
             spawnPosition4.z = Random.Range(34.73f, 34.74f);
             GameObject platform5 = Instantiate(_platform5, spawnPosition4, Quaternion.identity);
             platform5.GetComponent<Rigidbody>().AddForce(ImpulseVectorRL, ForceMode.Impulse);
-            Destroy(platform5, 7f);
+            Destroy(platform5, 7.5f);
 
         }
     }
@@ -129,7 +129,7 @@ public class Level3platforms : MonoBehaviour
             spawnPosition5.z = Random.Range(-36.18f, -36.181f);
             GameObject platform6 = Instantiate(_platform6, spawnPosition5, Quaternion.identity);
             platform6.GetComponent<Rigidbody>().AddForce(ImpulseVectorLR, ForceMode.Impulse);
-            Destroy(platform6, 7f);
+            Destroy(platform6, 7.5f);
 
         }
     }
@@ -148,7 +148,7 @@ public class Level3platforms : MonoBehaviour
             spawnPosition6.z = Random.Range(35.1f, 35.11f);
             GameObject platform7 = Instantiate(_platform7, spawnPosition6, Quaternion.identity);
             platform7.GetComponent<Rigidbody>().AddForce(ImpulseVectorRL, ForceMode.Impulse);
-            Destroy(platform7, 7f);
+            Destroy(platform7, 7.5f);
 
         }
     }

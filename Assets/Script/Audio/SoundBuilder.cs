@@ -46,10 +46,7 @@ namespace AudioSystem
             SoundEmitter emitter = m_soundManager.Get();
             emitter.Initialize(m_soundData);
             emitter.transform.position = m_position;
-            if (m_transformToFollow is not null)
-            {
-                emitter.SetTransformToFollow(m_transformToFollow);
-            }
+            emitter.SetTransformToFollow(m_transformToFollow);
             if (m_randomPitch)
             {
                 emitter.WithRandomPitch();

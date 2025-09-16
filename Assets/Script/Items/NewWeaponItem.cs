@@ -31,7 +31,7 @@ public class NewWeaponItem : BasePickup
                 if (!(slot.RemainingUseCount < slot.Spell.UseCount)) continue;
                 slot.RemainingUseCount = slot.Spell.UseCount;
                 staff.OnStaffSpellChange.Invoke(staff.GetSpellDataForCurrentSlot());
-                Destroy(gameObject);
+                gameObject.Destroy();
                 return;
             }
         }

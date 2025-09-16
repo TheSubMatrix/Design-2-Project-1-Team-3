@@ -29,6 +29,7 @@ namespace AudioSystem
         public void SetTransformToFollow(Transform transformToFollow)
         {
             m_transformToFollow = transformToFollow;
+            if (!m_transformToFollow) return;
             m_cachedPosition = transformToFollow.position;
         }
         

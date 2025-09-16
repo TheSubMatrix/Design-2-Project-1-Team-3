@@ -7,7 +7,7 @@ public class KeyForUnlockableDoor : BasePickup
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Destroy(gameObject);
+            gameObject.Destroy();
         }
     }
 }

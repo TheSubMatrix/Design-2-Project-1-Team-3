@@ -10,6 +10,9 @@ public class UIpauseMenu : MonoBehaviour
     public void TransitionToScene(string sceneName, float transitionTime = 0.5f)
     {
         SceneTransitionManager.Instance.TransitionToScene("Level 1", 0.5f);
+        SceneTransitionManager.Instance.TransitionToScene("Level 2", 0.5f);
+        SceneTransitionManager.Instance.TransitionToScene("Level 3", 0.5f);
+        SceneTransitionManager.Instance.TransitionToScene("Help", 0.5f);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

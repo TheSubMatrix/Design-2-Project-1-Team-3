@@ -98,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4609776146625971698}
   - component: {fileID: 6213977898797202676}
-  - component: {fileID: 7911036641691397647}
+  - component: {fileID: 3417933486955267022}
   m_Layer: 0
   m_Name: Torchlight_01
   m_TagString: Untagged
@@ -138,7 +138,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -186,7 +186,7 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &7911036641691397647
+--- !u!114 &3417933486955267022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

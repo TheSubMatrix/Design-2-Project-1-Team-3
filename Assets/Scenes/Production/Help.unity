@@ -4200,10 +4200,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1205137198688049319, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 18f96cd0b7113f942bc0d421eaa81466, type: 2}
     - target: {fileID: 2122914294946770287, guid: 5d94178a7f723414bbe01779386717f2, type: 3}
       propertyPath: m_Name
       value: New Player Test Model

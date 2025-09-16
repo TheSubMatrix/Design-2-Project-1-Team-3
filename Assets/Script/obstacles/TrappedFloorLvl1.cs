@@ -11,14 +11,14 @@ public class TrappedFloorLvl1 : MonoBehaviour
         {
             StartCoroutine(RotateObject(Vector3.up, 90));
             //Destroy(gameObject);
-            transform.Rotate(90, 0, 0);
+            transform.Rotate(0, 0, 90);
         }
     }
     private IEnumerator RotateObject(Vector3 axis, float angle)
     {
         isRotating = true;
         Quaternion startRotation = transform.rotation;
-        Quaternion endRotation = Quaternion.Euler(transform.eulerAngles + axis * angle);
+        Quaternion endRotation = Quaternion.Euler(0,0,transform.position.z);
         float t = 0;
 
         while (t < 1.0f)

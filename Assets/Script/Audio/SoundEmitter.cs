@@ -10,12 +10,28 @@ namespace AudioSystem
         public SoundData SoundData { get; private set; }
         AudioSource m_audioSource;
         Coroutine m_playSoundCoroutine;
-
+        Transform m_cachedTransform;
+        Transform m_transformToFollow;
+        Vector3 m_cachedPosition;
+        
         void Awake()
         {
             m_audioSource = gameObject.GetOrAddComponent<AudioSource>();
+            m_cachedTransform = transform;
+        }
+        void Update()
+        {
+            if (!m_transformToFollow || m_cachedPosition == m_transformToFollow.position) return;
+            m_cachedTransform.position = m_transformToFollow.position;
+            m_cachedPosition = m_transformToFollow.position;
         }
 
+        public void SetTransformToFollow(Transform transformToFollow)
+        {
+            m_transformToFollow = transformToFollow;
+            m_cachedPosition = transformToFollow.position;
+        }
+        
         public void Play()
         {
             if (m_playSoundCoroutine is not null)

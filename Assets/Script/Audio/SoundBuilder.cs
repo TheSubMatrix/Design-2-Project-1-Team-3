@@ -9,7 +9,7 @@ namespace AudioSystem
         SoundData m_soundData;
         Vector3 m_position = Vector3.zero;
         bool m_randomPitch;
-        Transform m_parent;
+        Transform m_transformToFollow;
 
         public SoundBuilder(SoundManager soundManager)
         {
@@ -34,9 +34,9 @@ namespace AudioSystem
             return this;
         }
 
-        public SoundBuilder AttachedTo(Transform parent)
+        public SoundBuilder AttachedTo(Transform attachmentTransform)
         {
-            m_parent = parent;
+            m_transformToFollow = attachmentTransform;
             return this;
         }
 
@@ -46,7 +46,10 @@ namespace AudioSystem
             SoundEmitter emitter = m_soundManager.Get();
             emitter.Initialize(m_soundData);
             emitter.transform.position = m_position;
-            emitter.transform.parent = m_parent ?? m_soundManager.transform;
+            if (m_transformToFollow is not null)
+            {
+                emitter.SetTransformToFollow(m_transformToFollow);
+            }
             if (m_randomPitch)
             {
                 emitter.WithRandomPitch();

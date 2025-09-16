@@ -6,9 +6,6 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class NewWeaponItem : BasePickup
 {
-    [SerializeField] float m_rotationSpeed = 100;
-    [SerializeField] float m_bobbingSpeed = 1;
-    [SerializeField] float m_bobbingAmount = 0.25f;
     [SerializeField]SpellSettingsSO m_staffSpellToGive;
     void OnTriggerEnter(Collider other)
     {
@@ -38,11 +35,5 @@ public class NewWeaponItem : BasePickup
                 return;
             }
         }
-    }
-
-    void Update()
-    {
-        transform.Rotate(Vector3.up, m_rotationSpeed * Time.deltaTime);
-        transform.position = new Vector3(transform.position.x, transform.position.y + (Mathf.Sin(Time.time * m_bobbingSpeed) * Time.deltaTime * m_bobbingAmount), transform.position.z);
     }
 }

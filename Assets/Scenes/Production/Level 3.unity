@@ -55284,8 +55284,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bab59860bf29b6c40876d64e4a0996f7, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -60686,9 +60686,6 @@ SceneRoots:
   - {fileID: 1284728906}
   - {fileID: 547096897}
   - {fileID: 912911196}
-<<<<<<< Updated upstream
   - {fileID: 1903420109}
   - {fileID: 1979645008}
   - {fileID: 734990178}
-=======
->>>>>>> Stashed changes

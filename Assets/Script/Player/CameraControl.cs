@@ -25,6 +25,7 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if(Time.timeScale <= 0) return;
         //get the mouse x and y values
         m_mousePos.x = Input.GetAxisRaw("Mouse X");
         m_mousePos.y = Input.GetAxisRaw("Mouse Y");

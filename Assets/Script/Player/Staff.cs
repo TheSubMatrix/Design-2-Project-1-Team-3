@@ -81,7 +81,7 @@ public class Staff : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Time.timeScale > 0f)
         {
             Attack();
             OnStaffSpellChange?.Invoke(GetSpellDataForCurrentSlot());

@@ -45,7 +45,7 @@ public class SceneTransitionManager : Singleton<SceneTransitionManager>
         float elapsedTime = 0;
         while (elapsedTime < transitionTime)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
             canvasGroup.alpha = Mathf.Lerp(canvasGroup.alpha, targetAlpha, elapsedTime / transitionTime);
             canvasGroup.blocksRaycasts = canvasGroup.alpha > 0;
             yield return null;

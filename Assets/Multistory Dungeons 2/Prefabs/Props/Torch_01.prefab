@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 144, y: -12, z: 88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01562189, y: 0.01562189, z: 0.01562189}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4609776146625971698}
@@ -98,7 +98,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4609776146625971698}
   - component: {fileID: 6213977898797202676}
-  - component: {fileID: 3417933486955267022}
+  - component: {fileID: 432098911380278946}
   m_Layer: 0
   m_Name: Torchlight_01
   m_TagString: Untagged
@@ -131,8 +131,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 30
+  m_Color: {r: 0.9490196, g: 0.5921569, b: 0.27058825, a: 1}
+  m_Intensity: 15
   m_Range: 30
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -174,9 +174,9 @@ Light:
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 2
-  m_ColorTemperature: 2960
-  m_UseColorTemperature: 1
+  m_BounceIntensity: 3
+  m_ColorTemperature: 2034
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -186,7 +186,7 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
---- !u!114 &3417933486955267022
+--- !u!114 &432098911380278946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 3
   m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 0
+  m_AdditionalLightsShadowResolutionTier: 2
   m_LightLayerMask: 1
   m_RenderingLayers: 1
   m_CustomShadowLayers: 0

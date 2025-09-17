@@ -38,9 +38,10 @@ namespace AudioSystem
             return false;
 
         }
-        
-        void Start()
+
+        protected override void InitializeSingleton()
         {
+            base.InitializeSingleton();
             InitializePool();
         }
         SoundEmitter CreateSoundEmitter()

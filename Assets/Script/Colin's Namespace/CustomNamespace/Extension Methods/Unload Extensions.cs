@@ -85,7 +85,7 @@ public static class UnloadExtensions
 			return true;
 		}
 
-		for(var parent = gameObject.transform.parent; parent; parent = parent.parent)
+		for(Transform parent = gameObject.transform.parent; parent; parent = parent.parent)
 		{
 			if(BeingDestroyed.Contains(parent.gameObject))
 			{

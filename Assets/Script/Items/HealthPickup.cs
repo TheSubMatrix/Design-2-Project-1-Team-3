@@ -10,7 +10,7 @@ public class HealthPickup : BasePickup
         IHealable healable = other.gameObject.GetComponent<IHealable>();
         if (healable is null || !healable.IsHealable) return;
         healable.Heal(m_healAmount);
-        gameObject.Destroy();
+        Collect();
     }
 
 }

@@ -25,7 +25,7 @@ MonoBehaviour:
           Clip: {fileID: 8300000, guid: eb992ed93e5c37e468e73f727b53d884, type: 3}
           MixerGroup: {fileID: -8113704343797999582, guid: fc4fa691de3ec5542b809c3c7d5651aa, type: 2}
           Loop: 0
-          PlayOnAwake: 1
+          PlayOnAwake: 0
           PlayedFrequently: 0
           Volume: 1
           Pitch: 1
@@ -40,6 +40,7 @@ MonoBehaviour:
           IgnoreListenerPause: 0
           RolloffMode: 0
         SpellSprite: {fileID: 21300000, guid: 93f6250b2939a2e4796d3c8e414540a8, type: 3}
+        SpellOwner: {fileID: 0}
         m_projectileForce: 10
         m_spellBallColor: {r: 2, g: 0.19168916, b: 0, a: 0}
         m_projectilePrefab: {fileID: 7629056565955650697, guid: 7a1fdd680f9409a4dbd5315a1e35e199, type: 3}

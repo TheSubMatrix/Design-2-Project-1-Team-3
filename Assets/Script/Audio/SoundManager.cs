@@ -8,7 +8,7 @@ namespace AudioSystem
     public class SoundManager : PersistentSingleton<SoundManager>
     {
         IObjectPool<SoundEmitter> m_soundEmitterPool;
-        readonly List<SoundEmitter> m_activeEmitters = new();
+        public readonly List<SoundEmitter> m_activeEmitters = new();
         public readonly Queue<SoundEmitter> FrequentEmitters = new();
         
         [SerializeField] SoundEmitter m_soundEmitterPrefab;
@@ -17,7 +17,7 @@ namespace AudioSystem
         [SerializeField] int m_maxPoolSize = 100;
         [SerializeField] int m_maxSoundInstances = 30;
 
-        public SoundBuilder CreateSound() => new SoundBuilder(this);
+        public SoundBuilder CreateSound() => new(this);
         public SoundEmitter Get() => m_soundEmitterPool.Get();
         public void ReturnToPool(SoundEmitter soundEmitter) => m_soundEmitterPool.Release(soundEmitter);
 
@@ -46,7 +46,7 @@ namespace AudioSystem
         }
         SoundEmitter CreateSoundEmitter()
         {
-           SoundEmitter emitter = Instantiate(m_soundEmitterPrefab);
+           SoundEmitter emitter = Instantiate(m_soundEmitterPrefab, transform, true);
            emitter.gameObject.SetActive(false);
            return emitter;
         }

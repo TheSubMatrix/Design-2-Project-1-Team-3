@@ -23,7 +23,7 @@ MonoBehaviour:
         SpellName: Rock Spell
         CastSound:
           Clip: {fileID: 0}
-          MixerGroup: {fileID: 0}
+          MixerGroup: {fileID: -8113704343797999582, guid: fc4fa691de3ec5542b809c3c7d5651aa, type: 2}
           Loop: 0
           PlayOnAwake: 0
           PlayedFrequently: 0
@@ -40,6 +40,7 @@ MonoBehaviour:
           IgnoreListenerPause: 0
           RolloffMode: 0
         SpellSprite: {fileID: 21300000, guid: 639bc3fc455222046adba123acaa2816, type: 3}
+        SpellOwner: {fileID: 0}
         m_projectileForce: 10
         m_spellBallColor: {r: 1.0037735, g: 1.0037735, b: 1.0037735, a: 0}
         m_projectilePrefab: {fileID: 7629056565955650697, guid: a3f3de76f0d8b794eb2e993ca3143dbd, type: 3}

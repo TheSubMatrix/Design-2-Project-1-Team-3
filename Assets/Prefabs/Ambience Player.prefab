@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8975116679335582891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055234099008102911}
+  - component: {fileID: 3283069527047799049}
+  m_Layer: 0
+  m_Name: Ambience Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2055234099008102911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8975116679335582891}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3283069527047799049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8975116679335582891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0155b7a593b9de43bfd13bb128378b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_soundsForLevels:
+  - LevelName: Level 1
+    SoundDataForLevel:
+      Clip: {fileID: 8300000, guid: 09a6dcc3d85356541966c4adfb3dc835, type: 3}
+      MixerGroup: {fileID: -8113704343797999582, guid: fc4fa691de3ec5542b809c3c7d5651aa, type: 2}
+      Loop: 1
+      PlayOnAwake: 1
+      PlayedFrequently: 0
+      Volume: 1
+      Pitch: 1
+      PanStereo: 0
+      SpatialBlend: 0
+      ReverbZoneMix: 1
+      DopplerLevel: 1
+      Spread: 0
+      MinDistance: 1
+      MaxDistance: 500
+      IgnoreListenerVolume: 0
+      IgnoreListenerPause: 0
+      RolloffMode: 0
+  - LevelName: Level 2
+    SoundDataForLevel:
+      Clip: {fileID: 8300000, guid: 7676e54f89f330444a122b2d4626dabc, type: 3}
+      MixerGroup: {fileID: -8113704343797999582, guid: fc4fa691de3ec5542b809c3c7d5651aa, type: 2}
+      Loop: 1
+      PlayOnAwake: 1
+      PlayedFrequently: 0
+      Volume: 1
+      Pitch: 1
+      PanStereo: 0
+      SpatialBlend: 0
+      ReverbZoneMix: 1
+      DopplerLevel: 1
+      Spread: 0
+      MinDistance: 1
+      MaxDistance: 500
+      IgnoreListenerVolume: 0
+      IgnoreListenerPause: 0
+      RolloffMode: 0
+  - LevelName: Level 3
+    SoundDataForLevel:
+      Clip: {fileID: 8300000, guid: bd92882cda2cc724c8f4fc651cbf3cec, type: 3}
+      MixerGroup: {fileID: -8113704343797999582, guid: fc4fa691de3ec5542b809c3c7d5651aa, type: 2}
+      Loop: 1
+      PlayOnAwake: 1
+      PlayedFrequently: 0
+      Volume: 1
+      Pitch: 1
+      PanStereo: 0
+      SpatialBlend: 0
+      ReverbZoneMix: 1
+      DopplerLevel: 1
+      Spread: 0
+      MinDistance: 1
+      MaxDistance: 500
+      IgnoreListenerVolume: 0
+      IgnoreListenerPause: 0
+      RolloffMode: 0
